@@ -12,4 +12,5 @@ html {
 
 .grid-container {
   display: grid;
+  display: block;
 }
