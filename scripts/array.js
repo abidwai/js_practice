@@ -4,6 +4,9 @@ var seprator = function() {
 
 // map()
 var a = [1, 2, 3, 4];
+console.log("orignal array :" + a);
+seprator();
+
 var result = a.map(function(value) {
     return value * 2;
 });
