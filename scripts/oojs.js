@@ -110,7 +110,7 @@
             }
         });
 
-        //both accesses set and get
+        //both accesses, set and get
         Object.defineProperty(this, "id", {
             get: function() {
                 return _id;
