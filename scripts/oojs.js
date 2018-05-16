@@ -42,9 +42,9 @@
         this.contact = contact;
     }
 
-     var getFullDeatails = function (obj){
-         return obj.name + "," + obj.contact;
-     }
+    var getFullDeatails = function(obj) {
+        return obj.name + "," + obj.contact;
+    }
 
     var team1 = new Company.TeamA.customer("John", 30);
     document.write("<br/> customer details: " + getFullDeatails(team1)); // John,30
@@ -52,7 +52,8 @@
     var team2 = new Company.TeamA.customer("Mac", 30);
     document.write("<br/> customer details: " + getFullDeatails(team2)); // John,30
 
-    document.write(team1.getFullDeatails === team2.getFullDeatails);
+    var result = team1.getFullDeatails === team2.getFullDeatails
+    document.write("<br/>method equals ? :" + result);
 
 
     /* private member in JS */
