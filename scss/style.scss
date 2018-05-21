@@ -27,16 +27,19 @@ html, body {
         text-align: center;
 
         &:first-of-type {
-            grid-row-start: 1;
-            grid-row-end: 3;
+            /* grid-row-start: 1;
+            grid-row-end: 3; */
+
+            grid-row: span 2;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         &:nth-of-type(2) {
-            grid-column-start: 2;
-            grid-column-end: 4;
+            /* grid-column-start: 2;
+            grid-column-end: 4; */
+            grid-column: span 2;
         }
     }
 }
