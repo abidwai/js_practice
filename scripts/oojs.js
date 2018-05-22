@@ -37,13 +37,13 @@
     var Company = Company || {};
     Company.TeamA = Company.TeamA || {};
 
-    Company.TeamA.customer = function(name, contact) {
+    Company.TeamA.customer = function(name, age) {
         this.name = name;
-        this.contact = contact;
+        this.age = age;
     }
 
     var getFullDeatails = function(obj) {
-        return obj.name + "," + obj.contact;
+        return obj.name + "," + obj.age;
     }
 
     var team1 = new Company.TeamA.customer("John", 30);
