@@ -7,10 +7,16 @@ var newNode = document.createElement("li");
 newNode.textContent = 'item5';
 
 var newNode2 = document.createElement("li");
-newNode2.textContent = 'item0';
+newNode2.textContent = 'item00';
 
 // appendChild
 if (result) {
-    itemList.appendChild(newNode);
-    itemList.prepend(newNode2);
+    var addedNode = itemList.appendChild(newNode);
+    // insert at firstlocation in node list
+    //itemList.prepend(newNode2);
+
+    // used to insert node in a specific location
+    itemList.insertBefore(newNode2, itemList.firstElementChild)
 }
+
+console.log(addedNode);
