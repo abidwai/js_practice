@@ -1,4 +1,6 @@
-var itemList = document.getElementsByTagName("ul")[0];
+var body = document.body;
+
+var itemList = body.getElementsByTagName("ul")[0];
 
 // check if it is html element or not
 var result = itemList.nodeType === 1;

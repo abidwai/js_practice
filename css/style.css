@@ -39,3 +39,58 @@ html, body {
   grid-column-end: 4; */
   grid-column: span 2;
 }
+
+.newsletter-main.es-volun-form .note-span {
+  display: block;
+  margin-top: -8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.newsletter-main.es-volun-form .es-form-lbl {
+  font-size: 22px;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .newsletter-main.es-volun-form .es-form-lbl {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .newsletter-main.es-volun-form .es-form-lbl {
+    font-size: 16px;
+  }
+}
+.newsletter-main.es-volun-form .news-title {
+  margin-top: 0px;
+}
+@media (max-width: 768px) {
+  .newsletter-main.es-volun-form .news-title {
+    font-size: 34px;
+  }
+}
+@media (max-width: 767px) {
+  .newsletter-main.es-volun-form .news-title {
+    font-size: 28px;
+  }
+}
+.newsletter-main.es-volun-form .form-element.es-emerg-con-field {
+  margin-top: 8px;
+}
+@media (max-width: 768px) {
+  .newsletter-main.es-volun-form .newsletter-main .news-page .news-title {
+    font-size: 36px;
+  }
+}
+@media (max-width: 767px) {
+  .newsletter-main.es-volun-form .newsletter-main .news-page .news-title {
+    font-size: 30px;
+  }
+}
+.newsletter-main.es-volun-form .note-span.es-vol-limit {
+  display: block;
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
+.newsletter-main.es-volun-form .part-header.es-voul-area-inte-lbl {
+  margin-bottom: 0px;
+}
