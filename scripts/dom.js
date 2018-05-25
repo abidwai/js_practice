@@ -42,3 +42,5 @@ console.log(myimg);
 
 
 /* ******************************* getElementsByName() ******************************* */
+
+var myCar = document.getElementsByName('car');
