@@ -1,5 +1,10 @@
+
+/* ******************************* general ******************************* */
+
+// grab body node for faster access of DOM
 var body = document.body;
 
+// grab ul node
 var itemList = body.getElementsByTagName("ul")[0];
 
 // check if it is html node or not
@@ -16,6 +21,7 @@ newNode2.textContent = 'item00';
 // appendChild newly created nodes
 if (result) {
     var addedNode = itemList.appendChild(newNode);
+
     // insert at firstlocation in node list
     //itemList.prepend(newNode2);
 
@@ -25,7 +31,7 @@ if (result) {
 
 console.log(addedNode);
 
-// getElementsByTagName()
+/* *******************************  getElementsByTagName() ******************************* */
 
 var img = body.getElementsByTagName('img'); // retrive all img node from the loaded page
 
@@ -33,3 +39,6 @@ var img = body.getElementsByTagName('img'); // retrive all img node from the loa
 var myimg = img.namedItem('myimg');
 
 console.log(myimg);
+
+
+/* ******************************* getElementsByName() ******************************* */
