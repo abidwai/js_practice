@@ -40,6 +40,7 @@ html, body {
   grid-column: span 2;
 }
 
+/* for volunteer apllication form form */
 .newsletter-main.es-volun-form .note-span {
   display: block;
   margin-top: -8px;

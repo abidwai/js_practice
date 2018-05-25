@@ -2,16 +2,18 @@ var body = document.body;
 
 var itemList = body.getElementsByTagName("ul")[0];
 
-// check if it is html element or not
+// check if it is html node or not
 var result = itemList.nodeType === 1;
 
+// create new node
 var newNode = document.createElement("li");
 newNode.textContent = 'item5';
 
+// create another new node
 var newNode2 = document.createElement("li");
 newNode2.textContent = 'item00';
 
-// appendChild
+// appendChild newly created nodes
 if (result) {
     var addedNode = itemList.appendChild(newNode);
     // insert at firstlocation in node list
@@ -22,3 +24,12 @@ if (result) {
 }
 
 console.log(addedNode);
+
+// getElementsByTagName()
+
+var img = body.getElementsByTagName('img'); // retrive all img node from the loaded page
+
+// retrive img node with 'myimg' named
+var myimg = img.namedItem('myimg');
+
+console.log(myimg);
