@@ -18,7 +18,7 @@ newNode.textContent = 'item5';
 var newNode2 = document.createElement("li");
 newNode2.textContent = 'item00';
 
-// appendChild newly created nodes
+// appendChild newly created nodes,if
 if (result) {
     var addedNode = itemList.appendChild(newNode);
 
