@@ -5,7 +5,7 @@
 var body = document.body;
 
 // grab ul node
-var itemList = body.getElementsByTagName("ul")[0];
+var itemList = body.getElementsByClassName("item-list")[0];
 
 // check if it is html node or not
 var result = itemList.nodeType === 1;
@@ -18,7 +18,7 @@ newNode.textContent = 'item5';
 var newNode2 = document.createElement("li");
 newNode2.textContent = 'item00';
 
-// appendChild newly created nodes,if
+// append newly created nodes
 if (result) {
     var addedNode = itemList.appendChild(newNode);
 
