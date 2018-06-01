@@ -53,7 +53,7 @@
     document.write("<br/> customer details: " + getFullDeatails(team2)); // John,30
 
     var result = team1.getFullDeatails === team2.getFullDeatails
-    document.write("<br/>method equals ? :" + result);
+    document.write("<br/>method equals ? :" + result); // true
 
 
     /* private member in JS */
