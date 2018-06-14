@@ -50,7 +50,7 @@
     document.write("<br/> customer details: " + getFullDeatails(team1)); // John,30
 
     var team2 = new Company.TeamA.customer("Mac", 30);
-    document.write("<br/> customer details: " + getFullDeatails(team2)); // John,30
+    document.write("<br/> customer details: " + getFullDeatails(team2)); // Mac,30
 
     var result = team1.getFullDeatails === team2.getFullDeatails
     document.write("<br/>method equals ? :" + result); // true
@@ -104,7 +104,7 @@
         var _name = name;
         var _id = id;
 
-        //only get access
+        //only get and set access
         Object.defineProperty(this, "name", {
             set: function(value) {
                 _name = value;
@@ -114,7 +114,7 @@
             }
         });
 
-        //both accesses, set and get
+        //only get
         Object.defineProperty(this, "id", {
             get: function() {
                 return _id;
