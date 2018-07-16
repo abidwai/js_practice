@@ -1,7 +1,7 @@
 var btnSave = document.getElementById("btn-save");
 
-var saveHandler = function(){
-	alert("clicked event");
+var saveHandler = function(e){
+	alert(e.type);
 }
 
 btnSave.addEventListener("click", saveHandler, false);
