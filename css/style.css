@@ -1,97 +1,34 @@
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 html, body {
   padding: 0px;
-  margin: 10px;
-}
+  margin: 10px; }
 
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 15px;
-}
-.grid-container .grid-item {
-  padding: 20px;
-  border: 2px solid #000000;
-  border-collapse: collapse;
-  text-align: center;
-}
-.grid-container .grid-item:first-of-type {
-  /* grid-row-start: 1;
-  grid-row-end: 3; */
-  grid-row: span 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.grid-container .grid-item:nth-of-type(2) {
-  /* grid-column-start: 2;
-  grid-column-end: 4; */
-  grid-column: span 2;
-}
-
-/* for volunteer apllication form form */
-.newsletter-main.es-volun-form .note-span {
-  display: block;
-  margin-top: -8px;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-.newsletter-main.es-volun-form .es-form-lbl {
-  font-size: 22px;
-  font-weight: 700;
-}
-@media (max-width: 768px) {
-  .newsletter-main.es-volun-form .es-form-lbl {
-    font-size: 18px;
-  }
-}
-@media (max-width: 767px) {
-  .newsletter-main.es-volun-form .es-form-lbl {
-    font-size: 16px;
-  }
-}
-.newsletter-main.es-volun-form .news-title {
-  margin-top: 0px;
-}
-@media (max-width: 768px) {
-  .newsletter-main.es-volun-form .news-title {
-    font-size: 34px;
-  }
-}
-@media (max-width: 767px) {
-  .newsletter-main.es-volun-form .news-title {
-    font-size: 28px;
-  }
-}
-.newsletter-main.es-volun-form .form-element.es-emerg-con-field {
-  margin-top: 8px;
-}
-@media (max-width: 768px) {
-  .newsletter-main.es-volun-form .newsletter-main .news-page .news-title {
-    font-size: 36px;
-  }
-}
-@media (max-width: 767px) {
-  .newsletter-main.es-volun-form .newsletter-main .news-page .news-title {
-    font-size: 30px;
-  }
-}
-.newsletter-main.es-volun-form .note-span.es-vol-limit {
-  display: block;
-  margin-top: 6px;
-  margin-bottom: 0px;
-}
-.newsletter-main.es-volun-form .part-header.es-voul-area-inte-lbl {
-  margin-bottom: 0px;
-}
+  grid-gap: 15px; }
+  .grid-container .grid-item {
+    padding: 20px;
+    border: 2px solid #000000;
+    border-collapse: collapse;
+    text-align: center; }
+    .grid-container .grid-item:first-of-type {
+      /* grid-row-start: 1;
+      grid-row-end: 3; */
+      grid-row: span 2;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .grid-container .grid-item:nth-of-type(2) {
+      /* grid-column-start: 2;
+      grid-column-end: 4; */
+      grid-column: span 2; }
