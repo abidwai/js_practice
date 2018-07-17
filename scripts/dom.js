@@ -16,7 +16,7 @@ newNode.textContent = 'item5';
 
 // create another new node
 var newNode2 = document.createElement("li");
-newNode2.textContent = 'item00';
+newNode2.textContent = 'item0';
 
 // append newly created nodes
 if (result) {

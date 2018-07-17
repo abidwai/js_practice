@@ -1,5 +1,5 @@
 (function() {
-    
+
     var seprator = function() {
         console.log("*****************************");
     }
@@ -18,34 +18,32 @@
 
 
     // filter()
-    var result2 = a.filter(function(value) {
+    var result = a.filter(function(value) {
         return value > 2;
     });
 
-    console.log("result by filter: " + result2);
+    console.log("result by filter: " + result);
     seprator();
 
     // every()
-    var result3 = a.every(function(value) {
+    var result = a.every(function(value) {
         return value > 2;
     });
 
-    console.log("result by every: " + result3);
+    console.log("result by every: " + result);
     seprator();
 
     // some()
-    var result4 = a.some(function(value) {
+    var result = a.some(function(value) {
         return value > 2;
     });
 
-    console.log("result by some: " + result4);
+    console.log("result by some: " + result);
     seprator();
 
-    //forEach()
+    // forEach()
     a.forEach(function(value, index) {
         console.log("index" + "[" + index + "] : " + value);
     });
     seprator();
-
-    var browser = ["safari", "chrome", "firefox", "opera"];
 })();

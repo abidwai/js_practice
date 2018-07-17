@@ -57,10 +57,9 @@
 
 
     /* private member in JS */
-
     function Person(name, age) {
 
-        //public fields
+        // public fields
         this.name = name;
         this.age = age;
 
@@ -69,16 +68,16 @@
          */
         var that = this;
 
-        //private fields
+        // private fields
         var fullDetails;
 
-        //private method
+        // private method
         var privateMethod = function() {
             fullDetails = that.name + "," + that.age;
             return fullDetails;
         }
 
-        //priviledge method have an access of private method
+        // priviledge method have an access of private method
         this.priviledgeMethod = function() {
             return privateMethod();
         }
@@ -98,13 +97,12 @@
 
 
     /* property in js */
-
     var Department = function(name, id) {
 
         var _name = name;
         var _id = id;
 
-        //only get and set access
+        // both get and set access
         Object.defineProperty(this, "name", {
             set: function(value) {
                 _name = value;
@@ -114,7 +112,7 @@
             }
         });
 
-        //only get
+        // only get
         Object.defineProperty(this, "id", {
             get: function() {
                 return _id;
@@ -123,12 +121,12 @@
     }
 
 
-    var dept = new Department("IT", "IT01");
+    var dept = new Department("IT", "IT001");
+    dept.id = 20; // wont work, because it doesn't have a set method
     console.log(dept.name + " " + dept.id);
 
 
     /* static member in js */
-
     var Circle = function(radius) {
 
         // static copy, shared by amoung all the instances

@@ -1,5 +1,6 @@
 (function() {
     var $user_agent = navigator.userAgent;
+    console.log($user_agent);
 
     var $safari_flag = $user_agent.toLowerCase().indexOf('safari');
     var $chrome_flag = $user_agent.toLowerCase().indexOf('chrome');
