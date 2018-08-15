@@ -19,7 +19,7 @@
 
     document.write("<br/>****************************");
 
-    /* Constructor pattern */
+    /* Constructor pattren */
     function Employee(fname, age) {
         this.fname = fname;
         this.age = age;
