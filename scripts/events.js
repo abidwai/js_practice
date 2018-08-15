@@ -28,15 +28,4 @@ var saveHandler = function(e) {
     alert(e.type);
 }
 
-// EventUtil.addHandler(btnSave, "click", saveHandler);
-
-var btn = document.getElementById("myBtn");
-btn.onclick = function(event) {
-    alert(event.eventPhase); //2
-};
-document.body.addEventListener("click", function(event) {
-    alert(event.eventPhase); //1
-}, true);
-document.body.onclick = function(event) {
-    alert(event.eventPhase); //3
-};
+EventUtil.addHandler(btnSave, "click", saveHandler);
