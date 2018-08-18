@@ -2,7 +2,7 @@
  * handle cross browser compatibility
  */
 var EventUtil = {
-    addHandler: function(element, eventType, handler) {
+    addHandler: (element, eventType, handler) => {
         if (element.addEventListener) {
             element.addEventListener(eventType, handler, false);
         } else if (element.attachEvent) {
@@ -11,7 +11,7 @@ var EventUtil = {
             element["on" + eventType] = handler;
         }
     },
-    removeHandler: function(element, eventType, handler) {
+    removeHandler: (element, eventType, handler) => {
         if (element.removeEventListener) {
             element.removeEventListener(eventType, handler, false);
         } else if (element.detachEvent) {
@@ -24,8 +24,24 @@ var EventUtil = {
 
 var btnSave = document.getElementById("btn-save");
 
-var saveHandler = function(e) {
-    alert(e.type);
+var saveHandler = (e) => {
+    console.log(e.eventPhase);
 }
 
-EventUtil.addHandler(btnSave, "click", saveHandler);
+var body = document.getElementsByTagName('body')[0];
+
+var testHnadler = (e) => {
+    console.log(e.eventPhase);
+}
+
+var setEvents = () => {
+
+    EventUtil.addHandler(btnSave, "click", saveHandler);
+    EventUtil.addHandler(body, "click", testHnadler);
+}
+
+var init = () => {
+    setEvents();
+}
+
+EventUtil.addHandler(window, "load", init);
