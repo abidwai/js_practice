@@ -11,6 +11,12 @@ var EventUtil = {
             element["on" + eventType] = handler;
         }
     },
+    getEvent: (event) => {
+        return event ? event : window.event;
+    },
+    getTarget: (event) => {
+        return event.target || event.srcElement;
+    },
     removeHandler: (element, eventType, handler) => {
         if (element.removeEventListener) {
             element.removeEventListener(eventType, handler, false);
@@ -22,25 +28,23 @@ var EventUtil = {
     }
 }
 
-var btnSave = document.getElementById("btn-save");
-
-var saveHandler = (e) => {
-    console.log(e.eventPhase);
-}
-
-var body = document.getElementsByTagName('body')[0];
-
-var testHnadler = (e) => {
-    console.log(e.eventPhase);
-}
-
-var setEvents = () => {
-
-    EventUtil.addHandler(btnSave, "click", saveHandler);
-    EventUtil.addHandler(body, "click", testHnadler);
-}
-
 var init = () => {
+    var btnSave = document.getElementById("btn-save");
+
+    var saveHandler = (e) => {
+        console.log(e.eventPhase);
+    }
+
+    var body = document.getElementsByTagName('body')[0];
+
+    var testHnadler = (e) => {
+        console.log(e.eventPhase);
+    }
+    var setEvents = () => {
+
+        EventUtil.addHandler(btnSave, "click", saveHandler);
+        EventUtil.addHandler(body, "click", testHnadler);
+    }
     setEvents();
 }
 
