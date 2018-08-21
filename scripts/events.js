@@ -32,13 +32,15 @@ var init = () => {
     var btnSave = document.getElementById("btn-save");
 
     var saveHandler = (e) => {
-        console.log(e.eventPhase);
+        var event = EventUtil.getEvent(event);
+        console.log(event.eventPhase);
     }
 
     var body = document.getElementsByTagName('body')[0];
 
     var testHnadler = (e) => {
-        console.log(e.eventPhase);
+        var event = EventUtil.getEvent(event);
+        console.log(event.eventPhase);
     }
     var setEvents = () => {
 
