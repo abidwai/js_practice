@@ -11,12 +11,6 @@ var EventUtil = {
             element["on" + eventType] = handler;
         }
     },
-    getEvent: (event) => {
-        return event ? event : window.event;
-    },
-    getTarget: (event) => {
-        return event.target || event.srcElement;
-    },
     removeHandler: (element, eventType, handler) => {
         if (element.removeEventListener) {
             element.removeEventListener(eventType, handler, false);
@@ -25,6 +19,12 @@ var EventUtil = {
         } else {
             element["on" + eventType] = null;
         }
+    },
+    getEvent: (event) => {
+        return event ? event : window.event;
+    },
+    getTarget: (event) => {
+        return event.target || event.srcElement;
     }
 }
 
