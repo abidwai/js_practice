@@ -31,14 +31,14 @@ var EventUtil = {
 var init = () => {
     var btnSave = document.getElementById("btn-save");
 
-    var saveHandler = (e) => {
+    var saveHandler = (event) => {
         var event = EventUtil.getEvent(event);
         console.log(event.eventPhase);
     }
 
     var body = document.getElementsByTagName('body')[0];
 
-    var testHnadler = (e) => {
+    var testHnadler = (event) => {
         var event = EventUtil.getEvent(event);
         console.log(event.eventPhase);
     }
