@@ -25,27 +25,40 @@ var EventUtil = {
     },
     getTarget: (event) => {
         return event.target || event.srcElement;
+    },
+    getCharCode: (event) => {
+        if (typeof event.charCode === "number") {
+            return event.charCode;
+        } else {
+            return event.keyCode;
+        }
     }
 }
 
 var init = () => {
     var btnSave = document.getElementById("btn-save");
-
     var saveHandler = (event) => {
         var event = EventUtil.getEvent(event);
         console.log(event.eventPhase);
     }
 
     var body = document.getElementsByTagName('body')[0];
-
     var testHnadler = (event) => {
         var event = EventUtil.getEvent(event);
         console.log(event.eventPhase);
     }
-    var setEvents = () => {
 
-        EventUtil.addHandler(btnSave, "click", saveHandler);
-        EventUtil.addHandler(body, "click", testHnadler);
+    var input = document.getElementById("input");
+    var inputHandler = (event) => {
+        var event = EventUtil.getEvent(event);
+        var charCode = EventUtil.getCharCode(event);
+        console.log(charCode);
+    }
+
+    var setEvents = () => {
+        // EventUtil.addHandler(btnSave, "click", saveHandler);
+        // EventUtil.addHandler(body, "click", testHnadler);
+        EventUtil.addHandler(input, "keypress", inputHandler);
     }
     setEvents();
 }
