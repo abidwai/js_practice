@@ -55,10 +55,32 @@ var init = () => {
         console.log(charCode);
     }
 
+    /* event deligation */
+    var list = document.getElementsByClassName('list')[0];
+    var listHandler = (event) => {
+        var event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+        switch (target.id) {
+            case "l1":
+                console.log("l1");
+                break;
+            case "l2":
+                console.log("l2");
+                break;
+            case "l3":
+                console.log("l3");
+                break;
+            default:
+                break;
+        }
+    }
+
     var setEvents = () => {
         // EventUtil.addHandler(btnSave, "click", saveHandler);
         // EventUtil.addHandler(body, "click", testHnadler);
         EventUtil.addHandler(input, "keypress", inputHandler);
+        EventUtil.addHandler(list, "click", listHandler);
+        // EventUtil.removeHandler(list, "click", listHandler);
     }
     setEvents();
 }
