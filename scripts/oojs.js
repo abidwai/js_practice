@@ -78,7 +78,7 @@
         }
 
         // priviledge method have an access of private method
-        this.priviledgeMethod = function() {
+        var priviledgeMethod = function() {
             return privateMethod();
         }
 
@@ -87,13 +87,17 @@
         and public method is shared by amoung all the instances (means only one copy in memory)
         */
         Person.prototype.publicMethod = function() {
-            return this.priviledgeMethod();
+            return priviledgeMethod();
         }
     }
 
-    var p = new Person("anup", 29);
+    var p = new Person("John", 30);
     var result = p.publicMethod();
     console.log(result);
+
+    var p2 = new Person("Mark", 24);
+    var result1 = p2.publicMethod();
+    console.log(result1);
 
 
     /* property in js */
