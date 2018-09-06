@@ -35,7 +35,7 @@ console.log(addedNode);
 
 var img = body.getElementsByTagName('img'); // retrive all img node from the loaded page
 
-// retrive img node with 'myimg' named
+// retrive img node with named attribute 'myimg'
 var myimg = img.namedItem('myimg');
 
 console.log(myimg);
