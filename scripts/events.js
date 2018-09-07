@@ -36,27 +36,24 @@ var EventUtil = {
 }
 
 var init = () => {
-    var btnSave = document.getElementById("btn-save");
+
     var saveHandler = (event) => {
         var event = EventUtil.getEvent(event);
         console.log(event.eventPhase);
     }
 
-    var body = document.getElementsByTagName('body')[0];
     var testHnadler = (event) => {
         var event = EventUtil.getEvent(event);
         console.log(event.eventPhase);
     }
 
-    var input = document.getElementById("input");
     var inputHandler = (event) => {
         var event = EventUtil.getEvent(event);
         var charCode = EventUtil.getCharCode(event);
         console.log(charCode);
     }
-
+    
     /* event deligation */
-    var list = document.getElementsByClassName('list')[0];
     var listHandler = (event) => {
         var event = EventUtil.getEvent(event);
         var target = EventUtil.getTarget(event);
@@ -76,9 +73,16 @@ var init = () => {
     }
 
     var setEvents = () => {
+        var btnSave = document.getElementById("btn-save");
         // EventUtil.addHandler(btnSave, "click", saveHandler);
+
+        var body = document.getElementsByTagName('body')[0];
         // EventUtil.addHandler(body, "click", testHnadler);
+
+        var input = document.getElementById("input");
         EventUtil.addHandler(input, "keypress", inputHandler);
+
+        var list = document.getElementsByClassName('list')[0];
         EventUtil.addHandler(list, "click", listHandler);
         // EventUtil.removeHandler(list, "click", listHandler);
     }
