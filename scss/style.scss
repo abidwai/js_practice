@@ -14,3 +14,19 @@ html, body {
     padding: 0px;
     margin: 10px;
 }
+
+.home {
+  width: 1000px;
+}
+
+.home__wall {
+  color: #ffffff;
+}
+
+.home__wall--window {
+	width: 300px;
+}
+
+.home--kitchen {
+	background-color: gray;
+}

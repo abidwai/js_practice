@@ -1,34 +1,34 @@
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 html, body {
   padding: 0px;
-  margin: 10px; }
+  margin: 10px;
+}
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 15px; }
-  .grid-container .grid-item {
-    padding: 20px;
-    border: 2px solid #000000;
-    border-collapse: collapse;
-    text-align: center; }
-    .grid-container .grid-item:first-of-type {
-      /* grid-row-start: 1;
-      grid-row-end: 3; */
-      grid-row: span 2;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-    .grid-container .grid-item:nth-of-type(2) {
-      /* grid-column-start: 2;
-      grid-column-end: 4; */
-      grid-column: span 2; }
+.home {
+  width: 1000px;
+}
+
+.home__wall {
+  color: #ffffff;
+}
+
+.home__wall--window {
+  width: 300px;
+}
+
+.home--kitchen {
+  background-color: gray;
+}
+
+/*# sourceMappingURL=style.css.map */
