@@ -1,4 +1,5 @@
 (function() {
+	console.log("############# BOM #############");
     var $user_agent = navigator.userAgent;
     console.log($user_agent);
 

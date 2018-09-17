@@ -45,5 +45,4 @@
     a.forEach(function(value, index) {
         console.log("index" + "[" + index + "] : " + value);
     });
-    seprator();
 })();

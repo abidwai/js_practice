@@ -5,7 +5,7 @@
 var body = document.body;
 
 // grab ul node
-var itemList = body.getElementsByClassName("item-list")[0];
+var itemList = body.getElementsByClassName("list")[0];
 
 // check if it is html node or not
 var result = itemList.nodeType === 1;

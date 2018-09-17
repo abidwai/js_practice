@@ -1,4 +1,5 @@
 (function() {
+    console.log("############# OOJS #############");
     /**
      * Object literal pattern
      * Singleton object
@@ -9,15 +10,15 @@
     }
 
     // before change
-    document.write("<br/>Employee name before change: " + Emp.fname); // John
+    console.log("Employee name before change: " + Emp.fname); // John
 
     // after changed
     var e2 = Emp;
     e2.fname = "Mark";
-    document.write("<br/>Employee name after changed: " + Emp.fname); // Mark
-    document.write("<br/>Employee name after changed: " + e2.fname); // Mark
+    console.log("Employee name after changed: " + Emp.fname); // Mark
+    console.log("Employee name after changed: " + e2.fname); // Mark
 
-    document.write("<br/>****************************");
+    console.log("****************************");
 
     /* Constructor pattren */
     function Employee(fname, age) {
@@ -27,10 +28,10 @@
 
     var e = new Employee("Sam", 28);
     var e2 = new Employee("Doe");
-    document.write("<br/>Employee name of e: " + e.fname); // Sam
-    document.write("<br/>Employee name of e2: " + e2.fname); // Doe
+    console.log("Employee name of e: " + e.fname); // Sam
+    console.log("Employee name of e2: " + e2.fname); // Doe
 
-    document.write("<br/>****************************");
+    console.log("****************************");
 
 
     /* Namespace, used to reduce global pollution */
@@ -47,13 +48,13 @@
     }
 
     var team1 = new Company.TeamA.customer("John", 30);
-    document.write("<br/> customer details: " + getFullDeatails(team1)); // John,30
+    console.log("customer details: " + getFullDeatails(team1)); // John,30
 
     var team2 = new Company.TeamA.customer("Mac", 30);
-    document.write("<br/> customer details: " + getFullDeatails(team2)); // Mac,30
+    console.log("customer details: " + getFullDeatails(team2)); // Mac,30
 
     var result = team1.getFullDeatails === team2.getFullDeatails
-    document.write("<br/>method equals ? :" + result); // true
+    console.log("method equals ? :" + result); // true
 
 
     /* private member in JS */
