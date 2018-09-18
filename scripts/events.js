@@ -74,7 +74,7 @@ var init = () => {
 
     var setEvents = () => {
         var btnSave = document.getElementById("btn-save");
-        // EventUtil.addHandler(btnSave, "click", saveHandler);
+        EventUtil.addHandler(btnSave, "click", saveHandler);
 
         var body = document.getElementsByTagName('body')[0];
         // EventUtil.addHandler(body, "click", testHnadler);
@@ -84,7 +84,7 @@ var init = () => {
 
         var list = document.getElementsByClassName('list')[0];
         EventUtil.addHandler(list, "click", listHandler);
-        // EventUtil.removeHandler(list, "click", listHandler);
+        EventUtil.removeHandler(list, "click", listHandler);
     }
     setEvents();
 }
