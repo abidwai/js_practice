@@ -20,6 +20,14 @@ var EventUtil = {
             element["on" + eventType] = null;
         }
     },
+    preventDefault: function(event) {
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    },
+
     getEvent: (event) => {
         return event ? event : window.event;
     },
@@ -52,7 +60,7 @@ var init = () => {
         var charCode = EventUtil.getCharCode(event);
         console.log(charCode);
     }
-    
+
     /* event deligation */
     var listHandler = (event) => {
         var event = EventUtil.getEvent(event);
