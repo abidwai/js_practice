@@ -20,14 +20,6 @@ var EventUtil = {
             element["on" + eventType] = null;
         }
     },
-    preventDefault: function(event) {
-        if (event.preventDefault) {
-            event.preventDefault();
-        } else {
-            event.returnValue = false;
-        }
-    },
-
     getEvent: (event) => {
         return event ? event : window.event;
     },
@@ -40,7 +32,21 @@ var EventUtil = {
         } else {
             return event.keyCode;
         }
-    }
+    },
+    preventDefault: (event) => {
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    },
+    stopPropagation: (event) => {
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
+    },
 }
 
 var init = () => {
