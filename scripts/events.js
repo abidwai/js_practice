@@ -47,25 +47,25 @@ var EventUtil = {
             event.cancelBubble = true;
         }
     },
-}
+};
 
 var init = () => {
 
     var saveHandler = (event) => {
         var event = EventUtil.getEvent(event);
         console.log(event.eventPhase);
-    }
+    };
 
     var testHnadler = (event) => {
         var event = EventUtil.getEvent(event);
         console.log(event.eventPhase);
-    }
+    };
 
     var inputHandler = (event) => {
         var event = EventUtil.getEvent(event);
         var charCode = EventUtil.getCharCode(event);
         console.log(charCode);
-    }
+    };
 
     /* event deligation */
     var listHandler = (event) => {
@@ -84,7 +84,7 @@ var init = () => {
             default:
                 break;
         }
-    }
+    };
 
     var setEvents = () => {
         var btnSave = document.getElementById("btn-save");
@@ -99,9 +99,9 @@ var init = () => {
         var list = document.getElementsByClassName('list')[0];
         EventUtil.addHandler(list, "click", listHandler);
         EventUtil.removeHandler(list, "click", listHandler);
-    }
+    };
     setEvents();
-}
+};
 
 EventUtil.addHandler(window, "load", init);
 
