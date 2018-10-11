@@ -26,7 +26,7 @@ if (result) {
     //itemList.prepend(newNode2);
 
     // used to insert node in a specific location
-    itemList.insertBefore(newNode2, itemList.firstElementChild)
+    itemList.insertBefore(newNode2, itemList.firstElementChild);
 }
 
 console.log(addedNode);

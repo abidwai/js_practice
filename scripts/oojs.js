@@ -41,11 +41,11 @@
     Company.TeamA.customer = function(name, age) {
         this.name = name;
         this.age = age;
-    }
+    };
 
     var getFullDeatails = function(obj) {
         return obj.name + "," + obj.age;
-    }
+    };
 
     var team1 = new Company.TeamA.customer("John", 30);
     console.log("customer details: " + getFullDeatails(team1)); // John,30
@@ -76,12 +76,12 @@
         var privateMethod = function() {
             fullDetails = that.name + "," + that.age;
             return fullDetails;
-        }
+        };
 
         // priviledge method have an access of private method
         var priviledgeMethod = function() {
             return privateMethod();
-        }
+        };
 
         /**
         public method don't have an access of private method, 
@@ -89,7 +89,7 @@
         */
         Person.prototype.publicMethod = function() {
             return priviledgeMethod();
-        }
+        };
     }
 
     var p = new Person("John", 30);
@@ -123,7 +123,7 @@
                 return _id;
             }
         });
-    }
+    };
 
 
     var dept = new Department("IT", "IT001");
@@ -141,8 +141,8 @@
 
         this.caluclateArea = function() {
             return Circle.PI * (this.r * this.r);
-        }
-    }
+        };
+    };
 
     var c = new Circle(5);
     console.log("Circle area is: " + c.caluclateArea());
