@@ -22,6 +22,7 @@ var contactUs = ((event) => {
 
     var setEvent = (evt) => {
         EventUtil.addHandler(form, "submit", (evt) => {
+            console.log('submit event');
             evt.preventDefault();
             var status = validateFields();
             if (status) {
