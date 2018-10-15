@@ -96,12 +96,22 @@ var init = () => {
         var input = document.getElementById("input");
         EventUtil.addHandler(input, "keypress", inputHandler);
 
+        EventUtil.addHandler(input, "focus", (event) => {
+            event = EventUtil.getEvent(event);
+            var target = EventUtil.getTarget(event);
+            target.select();
+        });
+
+        EventUtil.addHandler(input, "select", () => {
+            var res = input.value.substring(input.selectionStart, input.selectionEnd);
+            console.log(res);
+        });
+
         var list = document.getElementsByClassName('list')[0];
         EventUtil.addHandler(list, "click", listHandler);
-        EventUtil.removeHandler(list, "click", listHandler);
+        // EventUtil.removeHandler(list, "click", listHandler);
     };
     setEvents();
 };
 
 EventUtil.addHandler(window, "load", init);
-
