@@ -15,18 +15,29 @@ html, body {
     margin: 10px;
 }
 
-.home {
-  width: 1000px;
+/**
+* contact page
+*/
+.contact{
+    margin-bottom: 15px;
+    width: 400px;
+    max-width: 400px;
+    margin: 0 auto;
 }
-
-.home__wall {
-  color: #ffffff;
+.contact__part{
+    margin-bottom: 15px;
 }
-
-.home__wall--window {
-	width: 300px;
+.contact__input{
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    margin: 4px 0px 0px;
 }
-
-.home--kitchen {
-	background-color: gray;
+.button{
+    padding: 8px;
+    font-size: 16px;
+    &.button--state-success{}
 }
