@@ -55,44 +55,17 @@ var EventUtil = {
  */
 var formFields = ((event) => {
     var evt = EventUtil.getEvent(event);
-    var form = document.getElementById("contactForm");
-
-    var txtFlds = document.querySelectorAll(".js-chkempty");
 
     var init = (evt) => {
         setEvent();
     };
 
-    var validateFields = () => {
-        var status = checkEmpty();
-        if (status) {
-            return true;
-        } else {
-            return false;
-        }
-    };
+    var validateFields = (evt) => {
 
-    var checkEmpty = () => {
-        for (txtFld of txtFlds) {
-            console.log(txtFld + " : " + txtFld.value.trim() + "," + txtFld.value.trim().length);
-            if (txtFld.value.trim().length > 0) {
-                return true;
-            } else {
-                return false;
-            }
-        }
     };
 
     var setEvent = (evt) => {
-        EventUtil.addHandler(form, "submit", (evt) => {
-            evt.preventDefault();
-            var status = validateFields();
-            if (status) {
-                form.submit();
-            } else {
-                evt.preventDefault();
-            }
-        });
+
     };
 
     return {

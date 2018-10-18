@@ -23,11 +23,11 @@ html, body {
   margin: 0 auto;
 }
 
-.contact__part {
+.form__element {
   margin-bottom: 15px;
 }
 
-.contact__input {
+.form__input {
   -webkit-appearance: none;
   display: block;
   width: 100%;

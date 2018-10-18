@@ -9,31 +9,35 @@
 	<body>
 		<form action="" id="contactForm">
 			<div class="contact">
-				<div class="contact__part">
+				<div class="form__element">
 					<span>name</span>
-					<input type="text" class="contact__input js-chkempty">
+					<input type="text" id="userName" class="form__input js-chkempty">
+					<span class="error"></span>
 				</div>
-				<div class="contact__part">
+				<div class="form__element">
 					<span>email</span>
-					<input type="email" class="contact__input js-chkempty">
+					<input type="email" id="userEmail" class="form__input js-chkempty">
+					<span class="error"></span>
 				</div>
-				<div class="contact__part">
+				<div class="form__element">
 					<span>phone</span>
-					<input id="tel" type="tel" class="contact__input js-chkempty">
+					<input id="tel" type="tel" id="userTel" class="form__input js-chkempty">
+					<span class="error"></span>
 				</div>
-				<div class="contact__part">
+				<div class="form__element">
 					<span>city</span>
-					<select name="" id="" class="contact__input">
+					<select name="" id="" class="form__input">
 						<option value="">Select city</option>
 						<option value="">Pune</option>
 						<option value="">Banglore</option>
 					</select>
 				</div>
-				<div class="contact__part">
+				<div class="form__element">
 					<span>address</span>
-					<textarea name="" id="" cols="30" rows="5" class="contact__input js-chkempty"></textarea>
+					<textarea name="" id="" cols="30" rows="5" class="form__input js-chkempty"></textarea>
+					<span class="error"></span>
 				</div>
-				<div class="contact__part">
+				<div class="form__element">
 					<span>male: </span><input type="radio" name="gender">
 					<span>female: </span><input type="radio" name="gender">
 				</div>
