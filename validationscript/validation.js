@@ -76,7 +76,7 @@ let formFields = ((event) => {
 
     let validateName = (userName) => {
         let field = userName;
-        if (field.value.trim() === '') {
+        if (!field.value.trim()) {
             field.setAttribute("data-js-required", "*Should not be empty");
         } else {
             field.setAttribute("data-js-required", "");
@@ -85,7 +85,7 @@ let formFields = ((event) => {
 
     let validateEmail = (userEmail) => {
         let field = userEmail;
-        if (field.value.trim() === '') {
+        if (!field.value.trim()) {
             field.setAttribute("data-js-required", "*Should not be empty");
         } else {
             field.setAttribute("data-js-required", "");
@@ -94,7 +94,7 @@ let formFields = ((event) => {
 
     let validatePhone = (userPhone) => {
         let field = userPhone;
-        if (field.value.trim() === '') {
+        if (!field.value.trim()) {
             field.setAttribute("data-js-required", "*Should not be empty");
         } else {
             field.setAttribute("data-js-required", "");
@@ -103,7 +103,7 @@ let formFields = ((event) => {
 
     let validateMessage = (userMessage) => {
         let field = userMessage;
-        if (field.value.trim() === '') {
+        if (!field.value.trim()) {
             field.setAttribute("data-js-required", "*Should not be empty");
         } else {
             field.setAttribute("data-js-required", "");
@@ -112,12 +112,14 @@ let formFields = ((event) => {
 
     let checkStatus = () => {
         let errorFields = document.querySelectorAll("[data-js-required]");
-        let msg, flag = false;
+        let msg, flag;
 
         errorFields.forEach((item, index) => {
             msg = item.getAttribute("data-js-required");
-            item.previousElementSibling.innerHTML = msg;
-            if (!msg) {
+            if (msg !== null) {
+                item.previousElementSibling.innerHTML = msg;
+                flag = false;
+            } else if (msg == null) {
                 item.removeAttribute("data-js-required");
                 flag = true;
             }
@@ -127,8 +129,9 @@ let formFields = ((event) => {
 
     let submitForm = () => {
         let flag = checkStatus();
+        console.log(flag);
         if (flag) {
-            // form.submit();
+            form.submit();
         }
     };
 
