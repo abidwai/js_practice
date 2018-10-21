@@ -76,7 +76,7 @@ let formFields = ((event) => {
 
     let validateName = (userName) => {
         let field = userName;
-        if (!field.value.trim()) {
+        if (field.value.trim() === '') {
             field.setAttribute("data-js-required", "*Should not be empty");
         } else {
             field.setAttribute("data-js-required", "");
@@ -85,7 +85,7 @@ let formFields = ((event) => {
 
     let validateEmail = (userEmail) => {
         let field = userEmail;
-        if (!field.value.trim()) {
+        if (field.value.trim() === '') {
             field.setAttribute("data-js-required", "*Should not be empty");
         } else {
             field.setAttribute("data-js-required", "");
@@ -94,7 +94,7 @@ let formFields = ((event) => {
 
     let validatePhone = (userPhone) => {
         let field = userPhone;
-        if (!field.value.trim()) {
+        if (field.value.trim() === '') {
             field.setAttribute("data-js-required", "*Should not be empty");
         } else {
             field.setAttribute("data-js-required", "");
@@ -103,7 +103,7 @@ let formFields = ((event) => {
 
     let validateMessage = (userMessage) => {
         let field = userMessage;
-        if (!field.value.trim()) {
+        if (field.value.trim() === '') {
             field.setAttribute("data-js-required", "*Should not be empty");
         } else {
             field.setAttribute("data-js-required", "");
@@ -112,25 +112,23 @@ let formFields = ((event) => {
 
     let checkStatus = () => {
         let errorFields = document.querySelectorAll("[data-js-required]");
-        let msg, flag;
+        let msg, flag, allStatus = [];
 
-        for (let item of errorFields) {
-            msg = item.getAttribute("data-js-required");
-            if (msg !== null) {
-                item.previousElementSibling.innerHTML = msg;
-                flag = false;
-            } else if (msg == null) {
-                item.removeAttribute("data-js-required");
+        for (let errorField of errorFields) {
+            msg = errorField.getAttribute("data-js-required");
+            errorField.previousElementSibling.innerHTML = msg;
+            flag = false;
+            if (!msg) {
+                errorField.removeAttribute("data-js-required");
                 flag = true;
             }
         }
-
         return flag;
     };
 
     let submitForm = () => {
         let flag = checkStatus();
-        console.log(flag);
+        console.log("status "+flag);
         if (flag) {
             form.submit();
         }
