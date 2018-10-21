@@ -114,7 +114,7 @@ let formFields = ((event) => {
         let errorFields = document.querySelectorAll("[data-js-required]");
         let msg, flag;
 
-        errorFields.forEach((item, index) => {
+        for (let item of errorFields) {
             msg = item.getAttribute("data-js-required");
             if (msg !== null) {
                 item.previousElementSibling.innerHTML = msg;
@@ -123,7 +123,8 @@ let formFields = ((event) => {
                 item.removeAttribute("data-js-required");
                 flag = true;
             }
-        });
+        }
+
         return flag;
     };
 
