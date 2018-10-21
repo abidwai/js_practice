@@ -78,47 +78,47 @@ let formFields = ((event) => {
     let validateName = (userName) => {
         let field = userName;
         if (field.value.trim() === '') {
-            field.setAttribute("data-required", "*Should not be empty");
+            field.setAttribute("data-js-required", "*Should not be empty");
         } else {
-            field.setAttribute("data-required","");
+            field.setAttribute("data-js-required","");
         }
     };
 
     let validateEmail = (userEmail) => {
         let field = userEmail;
         if (field.value.trim() === '') {
-            field.setAttribute("data-required", "*Should not be empty");
+            field.setAttribute("data-js-required", "*Should not be empty");
         } else {
-            field.setAttribute("data-required","");
+            field.setAttribute("data-js-required","");
         }
     };
 
     let validatePhone = (userPhone) => {
         let field = userPhone;
         if (field.value.trim() === '') {
-            field.setAttribute("data-required", "*Should not be empty");
+            field.setAttribute("data-js-required", "*Should not be empty");
         } else {
-            field.setAttribute("data-required","");
+            field.setAttribute("data-js-required","");
         }
     };
 
     let validateMessage = (userMessage) => {
         let field = userMessage;
         if (field.value.trim() === '') {
-            field.setAttribute("data-required", "*Should not be empty");
+            field.setAttribute("data-js-required", "*Should not be empty");
         } else {
-            field.setAttribute("data-required","");
+            field.setAttribute("data-js-required","");
         }
     };
 
     let checkStatus = () => {
-        let errorFields = document.querySelectorAll("[data-required]");
+        let errorFields = document.querySelectorAll("[data-js-required]");
         let msg;
         for (let errorField of errorFields) {
-            msg = errorField.getAttribute("data-required");
+            msg = errorField.getAttribute("data-js-required");
             errorField.previousElementSibling.innerHTML = msg;
             if(!msg){
-                errorField.removeAttribute("data-required");
+                errorField.removeAttribute("data-js-required");
             }
         }
     };
