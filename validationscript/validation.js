@@ -116,19 +116,22 @@ let formFields = ((event) => {
 
         for (let errorField of errorFields) {
             msg = errorField.getAttribute("data-js-required");
-            errorField.previousElementSibling.innerHTML = msg;
-            flag = false;
-            if (!msg) {
+
+            if (msg.length < 1) {
                 errorField.removeAttribute("data-js-required");
                 flag = true;
+            } else {
+                errorField.previousElementSibling.innerHTML = msg;
+                flag = false;
             }
+
         }
         return flag;
     };
 
     let submitForm = () => {
         let flag = checkStatus();
-        console.log("status "+flag);
+        console.log("status " + flag);
         if (flag) {
             form.submit();
         }
