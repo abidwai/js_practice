@@ -1,7 +1,7 @@
 /**
  * handle cross browser comaptibility issue
  */
-var EventUtil = {
+let EventUtil = {
     addHandler: (element, eventType, handler) => {
         if (element.addEventListener) {
             element.addEventListener(eventType, handler, false);
@@ -53,19 +53,82 @@ var EventUtil = {
 /** 
  * form field validation
  */
-var formFields = ((event) => {
-    var evt = EventUtil.getEvent(event);
+let formFields = ((event) => {
+    let evt = EventUtil.getEvent(event);
+    let form = document.getElementById("contactForm");
+    let userName = document.getElementById("userName");
+    let userEmail = document.getElementById("userEmail");
+    let userPhone = document.getElementById("userPhone");
+    let userMessage = document.getElementById("userMessage");
 
-    var init = (evt) => {
+    let init = (evt) => {
         setEvent();
     };
 
-    var validateFields = (evt) => {
+    let validateForm = (evt) => {
+        evt.preventDefault();
+        validateName(userName);
+        validateEmail(userEmail);
+        validatePhone(userPhone);
+        validateMessage(userMessage);
+        checkStatus();
+        submitForm();
+    };
+
+    let validateName = (userName) => {
+        let field = userName;
+        if (field.value.trim() === '') {
+            field.setAttribute("data-required", "*Should not be empty");
+        } else {
+            field.setAttribute("data-required","");
+        }
+    };
+
+    let validateEmail = (userEmail) => {
+        let field = userEmail;
+        if (field.value.trim() === '') {
+            field.setAttribute("data-required", "*Should not be empty");
+        } else {
+            field.setAttribute("data-required","");
+        }
+    };
+
+    let validatePhone = (userPhone) => {
+        let field = userPhone;
+        if (field.value.trim() === '') {
+            field.setAttribute("data-required", "*Should not be empty");
+        } else {
+            field.setAttribute("data-required","");
+        }
+    };
+
+    let validateMessage = (userMessage) => {
+        let field = userMessage;
+        if (field.value.trim() === '') {
+            field.setAttribute("data-required", "*Should not be empty");
+        } else {
+            field.setAttribute("data-required","");
+        }
+    };
+
+    let checkStatus = () => {
+        let errorFields = document.querySelectorAll("[data-required]");
+        let msg;
+        for (let errorField of errorFields) {
+            msg = errorField.getAttribute("data-required");
+            errorField.previousElementSibling.innerHTML = msg;
+            if(!msg){
+                errorField.removeAttribute("data-required");
+            }
+        }
+    };
+
+    let submitForm = () => {
 
     };
 
-    var setEvent = (evt) => {
-
+    let setEvent = (evt) => {
+        EventUtil.addHandler(form, "submit", validateForm);
     };
 
     return {

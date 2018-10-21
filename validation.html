@@ -11,22 +11,22 @@
 			<div class="contact">
 				<div class="form__element">
 					<span>name</span>
-					<input type="text" id="userName" class="form__input js-chkempty">
 					<span class="error"></span>
+					<input type="text" id="userName" class="form__input">
 				</div>
 				<div class="form__element">
 					<span>email</span>
-					<input type="email" id="userEmail" class="form__input js-chkempty">
 					<span class="error"></span>
+					<input type="email" id="userEmail" class="form__input">
 				</div>
 				<div class="form__element">
 					<span>phone</span>
-					<input id="tel" type="tel" id="userTel" class="form__input js-chkempty">
 					<span class="error"></span>
+					<input type="tel" id="userPhone" class="form__input">
 				</div>
 				<div class="form__element">
 					<span>city</span>
-					<select name="" id="" class="form__input">
+					<select name="" id="userCity" class="form__input">
 						<option value="">Select city</option>
 						<option value="">Pune</option>
 						<option value="">Banglore</option>
@@ -34,14 +34,14 @@
 				</div>
 				<div class="form__element">
 					<span>address</span>
-					<textarea name="" id="" cols="30" rows="5" class="form__input js-chkempty"></textarea>
 					<span class="error"></span>
+					<textarea name="" id="userMessage" cols="30" rows="5" class="form__input"></textarea>
 				</div>
 				<div class="form__element">
 					<span>male: </span><input type="radio" name="gender">
 					<span>female: </span><input type="radio" name="gender">
 				</div>
-				<button type="submit" value="submit" class="button">submit</button>
+				<button type="submit" value="submit" id="submitButton" class="button">submit</button>
 			</div>
 		</form>
 		<script src="validationscript/validation.js"></script>
