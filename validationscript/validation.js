@@ -94,10 +94,17 @@ let formFields = ((event) => {
 
     let validatePhone = (userPhone) => {
         let field = userPhone;
+        let fieldLength = field.value.length;
         if (field.value.trim() === '') {
             field.setAttribute("data-js-required", "*Should not be empty");
         } else {
             field.setAttribute("data-js-required", "");
+        }
+
+        if (fieldLength >= 1 && fieldLength !== 10) {
+            field.setAttribute("data-js-error", "*Should be 10 digit");
+        } else {
+            field.removeAttribute("data-js-error", "*Should be 10 digit");
         }
     };
 
@@ -112,26 +119,35 @@ let formFields = ((event) => {
 
     let checkStatus = () => {
         let errorFields = document.querySelectorAll("[data-js-required]");
-        let msg, flag, allStatus = [];
+        let invalidFields = document.querySelectorAll("[data-js-error]");
+        let flag;
 
         for (let errorField of errorFields) {
-            msg = errorField.getAttribute("data-js-required");
+            let msg = errorField.getAttribute("data-js-required");
 
             if (msg.length < 1) {
+                errorField.previousElementSibling.innerHTML = '';
                 errorField.removeAttribute("data-js-required");
-                flag = true;
             } else {
                 errorField.previousElementSibling.innerHTML = msg;
-                flag = false;
             }
-
         }
-        return flag;
+
+        for (let invalidField of invalidFields) {
+            let msg = invalidField.getAttribute("data-js-error");
+            invalidField.previousElementSibling.innerHTML = msg;
+        }
+
+
+        if (userName.value && userPhone.value.length === 10 && userEmail.value && userMessage.value) {
+            return flag = true;
+        } else {
+            return flag = false;
+        }
     };
 
     let submitForm = () => {
         let flag = checkStatus();
-        console.log("status " + flag);
         if (flag) {
             form.submit();
         }
