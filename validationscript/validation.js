@@ -61,9 +61,6 @@ let formFields = ((event) => {
     let userPhone = document.getElementById("userPhone");
     let userMessage = document.getElementById("userMessage");
 
-    let inputBlur = [];
-    inputBlur.push(userName, userEmail, userPhone, userMessage);
-
     let init = (evt) => {
         setEvent();
     };
@@ -115,29 +112,23 @@ let formFields = ((event) => {
 
     let checkStatus = () => {
         let errorFields = document.querySelectorAll("[data-js-required]");
-        let msg, flag;
+        let msg, flag = false;
 
-        for (let errorField of errorFields) {
-            msg = errorField.getAttribute("data-js-required");
-            errorField.previousElementSibling.innerHTML = msg;
-            flag = false;
+        errorFields.forEach((item, index) => {
+            msg = item.getAttribute("data-js-required");
+            item.previousElementSibling.innerHTML = msg;
             if (!msg) {
-                errorField.removeAttribute("data-js-required");
+                item.removeAttribute("data-js-required");
                 flag = true;
             }
-        }
-
+        });
         return flag;
-    };
-
-    let inputOnBlur = () => {
-
     };
 
     let submitForm = () => {
         let flag = checkStatus();
         if (flag) {
-            form.submit();
+            // form.submit();
         }
     };
 
