@@ -139,7 +139,7 @@ let formFields = ((event) => {
         }
 
 
-        if (userName.value && userPhone.value.length === 10 && userEmail.value && userMessage.value) {
+        if (!userName.value.trim() && userPhone.value.length === 10 && !userEmail.value.trim() && !userMessage.value.trim()) {
             return flag = true;
         } else {
             return flag = false;
