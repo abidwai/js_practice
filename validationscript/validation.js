@@ -144,7 +144,6 @@ let formFields = ((event) => {
         } else {
             flag = false;
         }
-        
         return flag;
     };
 
