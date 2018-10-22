@@ -104,7 +104,7 @@ let formFields = ((event) => {
         if (fieldLength >= 1 && fieldLength !== 10) {
             field.setAttribute("data-js-error", "*Should be 10 digit");
         } else {
-            field.removeAttribute("data-js-error", "*Should be 10 digit");
+            field.removeAttribute("data-js-error");
         }
     };
 
