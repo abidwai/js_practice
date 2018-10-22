@@ -140,10 +140,12 @@ let formFields = ((event) => {
 
 
         if (userName.value.trim() && userPhone.value.length === 10 && userEmail.value.trim() && userMessage.value.trim()) {
-            return flag = true;
+            flag = true;
         } else {
-            return flag = false;
+            flag = false;
         }
+        
+        return flag;
     };
 
     let submitForm = () => {
