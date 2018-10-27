@@ -66,7 +66,7 @@ let formFields = ((event) => {
     };
 
     let validateForm = (evt) => {
-        evt.preventDefault();
+        EventUtil.preventDefault(evt);
         validateName(userName);
         validateEmail(userEmail);
         validatePhone(userPhone);
@@ -140,10 +140,11 @@ let formFields = ((event) => {
 
 
         if (userName.value.trim() && userPhone.value.length === 10 && userEmail.value.trim() && userMessage.value.trim()) {
-            return flag = true;
+            flag = true;
         } else {
-            return flag = false;
+            flag = false;
         }
+        return flag;
     };
 
     let submitForm = () => {
@@ -153,9 +154,28 @@ let formFields = ((event) => {
         }
     };
 
+    let numbersOnly = (evt) => {
+        let charCode = EventUtil.getCharCode(evt);
+        if (!/\d/.test(String.fromCharCode(charCode)) && charCode > 9 &&
+            !evt.ctrlKey) {
+            EventUtil.preventDefault(evt);
+        }
+    };
+
+    let alphabetsOnly = (evt) => {
+        let charCode = EventUtil.getCharCode(evt);
+        if (!/[A-Za-z]/.test(String.fromCharCode(charCode)) && !evt.ctrlKey) {
+            EventUtil.preventDefault(evt);
+        }
+    };
+
     let setEvent = (evt) => {
         EventUtil.addHandler(form, "submit", validateForm);
+        EventUtil.addHandler(userPhone, "keypress", numbersOnly);
+        EventUtil.addHandler(userName, "keypress", alphabetsOnly);
+        EventUtil.addHandler(userMessage, "keypress", alphabetsOnly);
     };
+
 
     return {
         init: init
