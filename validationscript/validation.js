@@ -164,14 +164,19 @@ let formFields = ((event) => {
 
     let alphabetsOnly = (evt) => {
         let charCode = EventUtil.getCharCode(evt);
-        if (!/[A-Za-z]/.test(String.fromCharCode(charCode)) && !evt.ctrlKey) {
+        if (!/[A-Za-z]/.test(String.fromCharCode(charCode))) {
             EventUtil.preventDefault(evt);
         }
     };
 
+    let nonPasteFld = (evt) => {
+       evt.preventDefault();
+    }
+
     let setEvent = (evt) => {
         EventUtil.addHandler(form, "submit", validateForm);
         EventUtil.addHandler(userPhone, "keypress", numbersOnly);
+        EventUtil.addHandler(userPhone, "paste", nonPasteFld);
         EventUtil.addHandler(userName, "keypress", alphabetsOnly);
         EventUtil.addHandler(userMessage, "keypress", alphabetsOnly);
     };
