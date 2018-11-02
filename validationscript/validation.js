@@ -117,7 +117,7 @@ let formFields = ((event) => {
         }
     };
 
-    let checkStatus = () => {
+    let checkList = () => {
         let errorFields = document.querySelectorAll("[data-js-required]");
         let invalidFields = document.querySelectorAll("[data-js-error]");
         let flag;
@@ -135,7 +135,9 @@ let formFields = ((event) => {
 
         for (let invalidField of invalidFields) {
             let msg = invalidField.getAttribute("data-js-error");
-            invalidField.previousElementSibling.innerHTML = msg;
+            if(msg.length > 1){
+                invalidField.previousElementSibling.innerHTML = msg;
+            }
         }
 
 
@@ -148,7 +150,7 @@ let formFields = ((event) => {
     };
 
     let submitForm = () => {
-        let flag = checkStatus();
+        let flag = checkList();
         if (flag) {
             form.submit();
         }
