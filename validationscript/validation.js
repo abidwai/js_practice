@@ -164,7 +164,7 @@ let formFields = ((event) => {
 
     let alphabetsOnly = (evt) => {
         let charCode = EventUtil.getCharCode(evt);
-        if (!/[A-Za-z]/.test(String.fromCharCode(charCode))) {
+        if (!/[A-Za-z ]/.test(String.fromCharCode(charCode))) {
             EventUtil.preventDefault(evt);
         }
     };
