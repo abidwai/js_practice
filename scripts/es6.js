@@ -89,10 +89,13 @@ let oojsEx = () => {
 // distructor
 let distEx = () => {
     // array ex
-    let numbers = [1, 2, 3];
+    let numbers = [1, 20];
     //let [a, b] = numbers; // 3 omit
     //let [a, , c] = numbers; // 2 omit
+    // let [a, b = 40] = numberts; // with default value
     let [a, ...num] = numbers; // 1 omit
     console.log(`${num}`);
+
+    // for object use {} brackets insted of [] brackets
 }
 distEx();
