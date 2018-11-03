@@ -4,30 +4,37 @@ html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     -webkit-box-sizing: inherit;
     -moz-box-sizing: inherit;
     box-sizing: inherit;
 }
 
-html, body {
+html,
+body {
     padding: 0px;
     margin: 10px;
 }
 
+
 /**
 * contact page
 */
-.contact{
+
+.contact {
     margin-bottom: 15px;
     width: 320px;
     max-width: 400px;
     margin: 0 auto;
 }
-.form__element{
+
+.form__element {
     margin-bottom: 15px;
 }
-.form__input{
+
+.form__input {
     -webkit-appearance: none;
     display: block;
     width: 100%;
@@ -36,13 +43,15 @@ html, body {
     border-radius: 3px;
     margin: 4px 0px 0px;
 }
+
 .error {
     color: red;
     font-size: 12px;
     font-weight: 400;
 }
-.button{
+
+.button {
     padding: 8px;
     font-size: 16px;
-    &.button--state-success{}
+    &.button--state-success {}
 }
