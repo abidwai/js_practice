@@ -26,22 +26,22 @@ let arrayExamples = () => {
 ////////////////////// 
 // spread operator examples
 let spreadOpEx = () => {
-    let addFoureAges = function(a, b, c, d) {
-        return a + b + c + d;
-    }
-    let sum = addFoureAges(10, 20, 30, 40);
-    console.log(sum);
-    // ES5
-    var ages = [10, 20, 30, 40];
-    /* if you want to pass array elements as an arguments then used apply method else use call method */
-    var sum5 = addFoureAges.apply(null, ages);
-    console.log('ES5 way ' + sum5);
+        let addFoureAges = function(a, b, c, d) {
+            return a + b + c + d;
+        }
+        let sum = addFoureAges(10, 20, 30, 40);
+        console.log(sum);
+        // ES5
+        var ages = [10, 20, 30, 40];
+        /* if you want to pass array elements as an arguments then used apply method else use call method */
+        var sum5 = addFoureAges.apply(null, ages);
+        console.log('ES5 way ' + sum5);
 
-    //ES6
-    let sum6 = addFoureAges(...ages);
-    console.log(`ES6 way ${sum6}`);
-}
-spreadOpEx();
+        //ES6
+        let sum6 = addFoureAges(...ages);
+        console.log(`ES6 way ${sum6}`);
+    }
+    //spreadOpEx();
 
 ////////////////////// 
 // rest operator examples
@@ -57,26 +57,42 @@ let restOpEx = () => {
 // default parameter
 
 let defultParaEx = () => {
-
-}
+        let car = (name, price, color, milage = 18) => {
+            console.log(`${name} ${price} ${color} ${milage}`);
+        }
+        car("Audi", 9000, 'red', 20);
+    }
+    //defultParaEx();
 
 //////////////////////
 // class and inheritance
 let oojsEx = () => {
-        class Element {
+        class Elements {
             constructor(name, age) {
                 this.name = name;
                 this.age = age;
             }
         }
 
-        class PersonJohn extends Element {
+        class PersonJohn extends Elements {
             constructor(name, age, desg) {
                 super(name, age);
                 this.desg = desg;
             }
         }
-        let pJohn = new PersonJohn("john", 29, "SE");
-        console.log(pJohn.name);
+        let objJohn = new PersonJohn("john", 29, "SE");
+        console.log(objJohn.name);
     }
-    // oojsEx();
+    //oojsEx();
+
+//////////////////////
+// distructor
+let distEx = () => {
+    // array ex
+    let numbers = [1, 2, 3];
+    //let [a, b] = numbers; // 3 omit
+    //let [a, , c] = numbers; // 2 omit
+    let [a, ...num] = numbers; // 1 omit
+    console.log(`${num}`);
+}
+distEx();
