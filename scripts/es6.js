@@ -47,11 +47,12 @@ let spreadOpEx = () => {
 // rest operator examples
 let restOpEx = () => {
 
-    let person = (limit, ...years) => {
-        //years.forEach(ele => console.log(2018 - ele >= limit));
+        let person = (limit, ...years) => {
+            years.forEach(ele => console.log(2018 - ele >= limit));
+        }
+        let anup = person(21, 1990, 2016);
     }
-    let anup = person(21, 1990, 2016);
-}
+    //restOpEx();
 
 ////////////////////// 
 // default parameter
@@ -96,6 +97,6 @@ let distEx = () => {
     let [a, ...num] = numbers; // 1 omit
     console.log(`${num}`);
 
-    // for object use {} brackets insted of [] brackets
+    // for object use {} brackets insted of [] brackets, and parameter should be same as object property
 }
 distEx();
