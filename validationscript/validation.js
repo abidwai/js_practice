@@ -104,7 +104,7 @@ let formFields = ((event) => {
         if (fieldLength >= 1 && fieldLength !== 10) {
             field.setAttribute("data-js-error", "*Should be 10 digit");
         } else {
-            field.removeAttribute("data-js-error", "*Should be 10 digit");
+            field.removeAttribute("data-js-error");
         }
     };
 
@@ -117,7 +117,7 @@ let formFields = ((event) => {
         }
     };
 
-    let checkStatus = () => {
+    let checkList = () => {
         let errorFields = document.querySelectorAll("[data-js-required]");
         let invalidFields = document.querySelectorAll("[data-js-error]");
         let flag;
@@ -135,7 +135,9 @@ let formFields = ((event) => {
 
         for (let invalidField of invalidFields) {
             let msg = invalidField.getAttribute("data-js-error");
-            invalidField.previousElementSibling.innerHTML = msg;
+            if(msg.length > 1){
+                invalidField.previousElementSibling.innerHTML = msg;
+            }
         }
 
 
@@ -148,7 +150,7 @@ let formFields = ((event) => {
     };
 
     let submitForm = () => {
-        let flag = checkStatus();
+        let flag = checkList();
         if (flag) {
             form.submit();
         }
@@ -164,14 +166,19 @@ let formFields = ((event) => {
 
     let alphabetsOnly = (evt) => {
         let charCode = EventUtil.getCharCode(evt);
-        if (!/[A-Za-z ]/.test(String.fromCharCode(charCode)) && !evt.ctrlKey) {
+        if (!/[A-Za-z ]/.test(String.fromCharCode(charCode))) {
             EventUtil.preventDefault(evt);
         }
     };
 
+    let nonPasteFld = (evt) => {
+       evt.preventDefault();
+    }
+
     let setEvent = (evt) => {
         EventUtil.addHandler(form, "submit", validateForm);
         EventUtil.addHandler(userPhone, "keypress", numbersOnly);
+        EventUtil.addHandler(userPhone, "paste", nonPasteFld);
         EventUtil.addHandler(userName, "keypress", alphabetsOnly);
         EventUtil.addHandler(userMessage, "keypress", alphabetsOnly);
     };
