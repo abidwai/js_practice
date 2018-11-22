@@ -1,4 +1,4 @@
-////////////////////// 
+//////////////////////
 // map examples
 let mapExamples = () => {
         let numbers = [10, 20, 30, 40];
@@ -13,7 +13,7 @@ let mapExamples = () => {
     }
     //mapExamples();
 
-////////////////////// 
+//////////////////////
 // array examples
 // ES6
 let arrayExamples = () => {
@@ -23,7 +23,7 @@ let arrayExamples = () => {
     }
     // arrayExamples();
 
-////////////////////// 
+//////////////////////
 // spread operator examples
 let spreadOpEx = () => {
         let addFoureAges = function(a, b, c, d) {
@@ -32,8 +32,8 @@ let spreadOpEx = () => {
         let sum = addFoureAges(10, 20, 30, 40);
         console.log(sum);
         // ES5
-        var ages = [10, 20, 30, 40];
-        /* if you want to pass array elements as an arguments then used apply method else use call method */
+        var ages = [10, 20, 30, 40, 50];
+        /* if you want to pass an array of elements as an arguments, then used apply method else use call method */
         var sum5 = addFoureAges.apply(null, ages);
         console.log('ES5 way ' + sum5);
 
@@ -41,9 +41,9 @@ let spreadOpEx = () => {
         let sum6 = addFoureAges(...ages);
         console.log(`ES6 way ${sum6}`);
     }
-    //spreadOpEx();
+    // spreadOpEx();
 
-////////////////////// 
+//////////////////////
 // rest operator examples
 let restOpEx = () => {
 
@@ -52,9 +52,9 @@ let restOpEx = () => {
         }
         let anup = person(21, 1990, 2016);
     }
-    //restOpEx();
+    // restOpEx();
 
-////////////////////// 
+//////////////////////
 // default parameter
 
 let defultParaEx = () => {
@@ -68,23 +68,23 @@ let defultParaEx = () => {
 //////////////////////
 // class and inheritance
 let oojsEx = () => {
-        class Elements {
-            constructor(name, age) {
-                this.name = name;
-                this.age = age;
-            }
+    class Elements {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
         }
-
-        class PersonJohn extends Elements {
-            constructor(name, age, desg) {
-                super(name, age);
-                this.desg = desg;
-            }
-        }
-        let objJohn = new PersonJohn("john", 29, "SE");
-        console.log(objJohn.name);
     }
-    //oojsEx();
+
+    class PersonJohn extends Elements {
+        constructor(name, age, desg) {
+            super(name, age);
+            this.desg = desg;
+        }
+    }
+    let objJohn = new PersonJohn("john", 29, "SE");
+    console.log(`${objJohn.name} age is ${objJohn.age} and he is ${objJohn.desg}`);
+}
+oojsEx();
 
 //////////////////////
 // distructor
