@@ -21,7 +21,7 @@ let arrayExamples = () => {
         console.log(numbers.findIndex(currentVal => currentVal > 30));
         console.log(numbers.find(currentVal => currentVal > 30));
     }
-    //arrayExamples();
+    // arrayExamples();
 
 ////////////////////// 
 // spread operator examples
@@ -89,14 +89,14 @@ let oojsEx = () => {
 //////////////////////
 // distructor
 let distEx = () => {
-    // array ex
-    let numbers = [1, 2, 3];
-    //let [a, b] = numbers; // 3 omit
-    //let [a, , c] = numbers; // 2 omit
-    // let [a, b = 40] = numberts; // with default parameter
-    let [a, ...num] = numbers; // 1 omit
-    console.log(`${num}`);
+        // array ex
+        let numbers = [1, 2, 3];
+        //let [a, b] = numbers; // 3 omit
+        //let [a, , c] = numbers; // 2 omit
+        // let [a, b = 40] = numberts; // with default parameter
+        let [a, ...num] = numbers; // 1 omit
+        console.log(`${num}`);
 
-    // for object use {} brackets insted of [] brackets, and parameter should be same as object property
-}
-distEx();
+        // for object use {} brackets insted of [] brackets, and parameter should be same as object property
+    }
+    // distEx();
