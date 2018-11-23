@@ -50,7 +50,7 @@ let EventUtil = {
 };
 
 
-/** 
+/**
  * form field validation
  */
 let formFields = ((event) => {
@@ -135,7 +135,7 @@ let formFields = ((event) => {
 
         for (let invalidField of invalidFields) {
             let msg = invalidField.getAttribute("data-js-error");
-            if(msg.length > 1){
+            if (msg.length > 1) {
                 invalidField.previousElementSibling.innerHTML = msg;
             }
         }
@@ -172,7 +172,7 @@ let formFields = ((event) => {
     };
 
     let nonPasteFld = (evt) => {
-       evt.preventDefault();
+        evt.preventDefault();
     }
 
     let setEvent = (evt) => {
