@@ -26,22 +26,22 @@ let arrayExamples = () => {
 //////////////////////
 // spread operator examples
 let spreadOpEx = () => {
-    let addFoureAges = function(a, b, c, d) {
-        return a + b + c + d;
-    }
-    let sum = addFoureAges(10, 20, 30, 40);
-    console.log(sum);
-    // ES5
-    var ages = [10, 20, 30, 40];
-    /* if you want to pass an array of elements as an arguments, then used apply method else use call method */
-    var sum5 = addFoureAges.apply(null, ages);
-    console.log('ES5 way ' + sum5);
+        let addFoureAges = function(a, b, c, d) {
+            return a + b + c + d;
+        }
+        let sum = addFoureAges(10, 20, 30, 40);
+        console.log(sum);
+        // ES5
+        var ages = [10, 20, 30, 40];
+        /* if you want to pass an array of elements as an arguments, then used apply method else use call method */
+        var sum5 = addFoureAges.apply(null, ages);
+        console.log('ES5 way ' + sum5);
 
-    //ES6
-    let sum6 = addFoureAges(...ages);
-    console.log(`ES6 way ${sum6}`);
-}
-spreadOpEx();
+        //ES6
+        let sum6 = addFoureAges(...ages);
+        console.log(`ES6 way ${sum6}`);
+    }
+    // spreadOpEx();
 
 //////////////////////
 // rest operator examples
@@ -81,7 +81,7 @@ class PersonJohn extends Elements {
         }
         // setter
     set desg(newDesg) {
-            //  this._desg = newDesg;
+            this._desg = newDesg;
         }
         // getter
     get desg() {
