@@ -67,24 +67,30 @@ let defultParaEx = () => {
 
 //////////////////////
 // class and inheritance
-let oojsEx = () => {
-    class Elements {
-        constructor(name, age) {
-            this.name = name;
-            this.age = age;
-        }
+class Elements {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
-
-    class PersonJohn extends Elements {
-        constructor(name, age, desg) {
-            super(name, age);
-            this.desg = desg;
-        }
-    }
-    let objJohn = new PersonJohn("john", 29, "SE");
-    console.log(`${objJohn.name} age is ${objJohn.age} and he is ${objJohn.desg}`);
 }
-oojsEx();
+
+class PersonJohn extends Elements {
+    constructor(name, age, desg) {
+            super(name, age);
+            this._desg = desg;
+        }
+        // setter
+    set desg(newDesg) {
+            //  this._desg = newDesg;
+        }
+        // getter
+    get desg() {
+        return this._desg;
+    }
+}
+let objJohn = new PersonJohn("john", 29, "SE");
+console.log(`${objJohn.name} age is ${objJohn.age} and he is ${objJohn.desg}`);
+console.log(`${objJohn.desg}`);
 
 //////////////////////
 // distructor
