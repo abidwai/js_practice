@@ -99,7 +99,7 @@ let distEx = () => {
         let numbers = [1, 2, 3];
         //let [a, b] = numbers; // 3 omit
         //let [a, , c] = numbers; // 2 omit
-        // let [a, b = 40] = numberts; // with default parameter
+        // let [a, b = 40] = numbers; // with default parameter
         let [a, ...num] = numbers; // 1 omit
         console.log(`${num}`);
 
