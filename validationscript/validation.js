@@ -62,7 +62,7 @@ let formFields = ((event) => {
     let userMessage = document.getElementById("userMessage");
 
     let init = (evt) => {
-        setEvent();
+        setEvents();
     };
 
     let validateForm = (evt) => {
@@ -175,7 +175,7 @@ let formFields = ((event) => {
         evt.preventDefault();
     }
 
-    let setEvent = (evt) => {
+    let setEvents = (evt) => {
         EventUtil.addHandler(form, "submit", validateForm);
         EventUtil.addHandler(userPhone, "keypress", numbersOnly);
         EventUtil.addHandler(userPhone, "paste", nonPasteFld);
