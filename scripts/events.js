@@ -104,7 +104,7 @@ var init = () => {
 
         EventUtil.addHandler(input, "select", () => {
             var res = input.value.substring(input.selectionStart, input.selectionEnd);
-            console.log(res);
+            console.log("res", res);
         });
 
         var list = document.getElementsByClassName('list')[0];
