@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>Validation</title>
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<form action="" id="contactForm">
-			<div class="contact">
-				<div class="form__element">
-					<span>name</span>
-					<span class="error"></span>
-					<input type="text" id="userName" class="form__input">
-				</div>
-				<div class="form__element">
-					<span>email</span>
-					<span class="error"></span>
-					<input type="email" id="userEmail" class="form__input">
-				</div>
-				<div class="form__element">
-					<span>phone</span>
-					<span class="error"></span>
-					<input type="tel" id="userPhone" class="form__input" maxlength="10">
-				</div>
-				<div class="form__element">
-					<span>city</span>
-					<select name="" id="userCity" class="form__input">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Validation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <form action="" id="contactForm">
+        <div class="contact">
+            <div class="form__element">
+                <span>name</span>
+                <span class="error"></span>
+                <input type="text" id="userName" class="form__input">
+            </div>
+            <div class="form__element">
+                <span>email</span>
+                <span class="error"></span>
+                <input type="email" id="userEmail" class="form__input">
+            </div>
+            <div class="form__element">
+                <span>phone</span>
+                <span class="error"></span>
+                <input type="tel" id="userPhone" class="form__input" maxlength="10">
+            </div>
+            <div class="form__element">
+                <span>city</span>
+                <select name="" id="userCity" class="form__input">
 						<option value="">Select city</option>
 						<option value="">Pune</option>
 						<option value="">Banglore</option>
 					</select>
-				</div>
-				<div class="form__element">
-					<span>address</span>
-					<span class="error"></span>
-					<textarea name="" id="userMessage" cols="30" rows="5" class="form__input"></textarea>
-				</div>
-				<div class="form__element">
-					<span>male: </span><input type="radio" name="gender">
-					<span>female: </span><input type="radio" name="gender">
-				</div>
-				<button type="submit" value="submit" id="submitButton" class="button">submit</button>
-			</div>
-		</form>
-		<script src="validationscript/validation.js"></script>
-	</body>
+            </div>
+            <div class="form__element">
+                <span>address</span>
+                <span class="error"></span>
+                <textarea name="" id="userMessage" cols="30" rows="5" class="form__input"></textarea>
+            </div>
+            <div class="form__element">
+                <span>male: </span><input type="radio" name="gender">
+                <span>female: </span><input type="radio" name="gender">
+            </div>
+            <button type="submit" value="submit" id="submitButton" class="button">submit</button>
+        </div>
+    </form>
+    <script src="scripts/util.js"></script>
+    <script src="validationscript/validation.js"></script>
+</body>
+
 </html>
