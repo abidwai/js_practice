@@ -17,8 +17,7 @@ let init = () => {
     // regex patterns
     const patterns = {
         name: /^[a-zA-z\d]{5}/, //name with digit
-        mobile: /^\d{10}$/,
-        password: /(\w+[`~@#$%^&*()_+\{\}\[\];:'".>\\,<\/?]{1,})/g
+        mobile: /^\d{10}$/
     };
 
     // validation function
