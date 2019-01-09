@@ -11,27 +11,36 @@ let EventUtil = {
 }
 
 let init = () => {
+    // validation script
+    const inputs = document.querySelectorAll("input");
+
     // regex patterns
     const patterns = {
-        number: /\d+/g
+        name: /^[a-zA-z\d]{5}/, //name with digit
+        mobile: /^\d{10}$/,
+        password: /(\w+[`~@#$%^&*()_+\{\}\[\];:'".>\\,<\/?]{1,})/g
     };
-    let txtNumber = document.getElementById("txtNumber");
-    let paraResult = document.getElementById("paraResult");
-    let btnNumFind = document.getElementById("btnFind");
 
-    let processString = () => {
-        // ex. abcdhf348 57jj jj8
-        paraResult.innerHTML = "";
-        let input = txtNumber.value;
-        let result = input.match(patterns.number);
-        if (result !== null) {
-            paraResult.innerHTML += [...result];
+    // validation function
+    let validate = (field, regex) => {
+        if (field.value !== null) {
+            const flag = regex.test(field.value);
+            if (flag) {
+                field.className = "valid";
+            } else {
+                field.className = "invalid";
+            }
         }
-    };
+    }
 
+    // set all events
     let setEvents = () => {
-        // find nmbers
-        EventUtil.addHandler(btnNumFind, "click", processString);
+        inputs.forEach((input, index) => {
+            const patternType = input.attributes.name.value;
+            EventUtil.addHandler(input, "keyup", (event) => {
+                validate(event.target, patterns[patternType]);
+            });
+        });
     };
     setEvents();
 };

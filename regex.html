@@ -5,14 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>RegEx validation</title>
+    <style>
+        p {
+            color: grey;
+            font-size: 13px;
+            margin: 5px 0px;
+            ;
+        }
+        
+        input {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 6px;
+        }
+    </style>
 </head>
 
 <body>
-    <input type="text" id="txtNumber">
-    <p id="paraResult"></p>
-    <button type="button" id="btnFind">find numbers</button>
-    <!-- <script src="scripts/util.js"></script> -->
+    <input type="text" name="name" id="txtName" placeholder="Name">
+    <p>Alphabets only</p>
+
+    <input type="text" name="mobile" id="txtMobile" placeholder="Mobile number">
+    <p>10 digit Number only</p>
+
+    <input type="email" name="email" id="txtEmail" placeholder="Email">
+    <p>Valid email address</p>
+
+    <button type="button" name="submit" id="btnSubmit">Check pattern</button>
+
     <script src="scripts/regex.js"></script>
 </body>
 

@@ -113,6 +113,7 @@ let formFields = ((event) => {
     };
 
     let alphabetsOnly = (evt) => {
+        console.log('in');
         let charCode = EventUtil.getCharCode(evt);
         if (!/[A-Za-z ]/.test(String.fromCharCode(charCode))) {
             EventUtil.preventDefault(evt);
