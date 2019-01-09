@@ -19,7 +19,8 @@ let init = () => {
         // ex. abcdhf348 57jj jj8
         paraResult.innerHTML = "";
         let input = txtNumber.value;
-        let result = input.match(/\d+/g);
+        let regexFindNum = /\d+/g;
+        let result = input.match(regexFindNum);
         if (result !== null) {
             paraResult.innerHTML += [...result];
         }
