@@ -11,6 +11,10 @@ let EventUtil = {
 }
 
 let init = () => {
+    // regex patterns
+    const patterns = {
+        number: /\d+/g
+    };
     let txtNumber = document.getElementById("txtNumber");
     let paraResult = document.getElementById("paraResult");
     let btnNumFind = document.getElementById("btnFind");
@@ -19,8 +23,7 @@ let init = () => {
         // ex. abcdhf348 57jj jj8
         paraResult.innerHTML = "";
         let input = txtNumber.value;
-        let regexFindNum = /\d+/g;
-        let result = input.match(regexFindNum);
+        let result = input.match(patterns.number);
         if (result !== null) {
             paraResult.innerHTML += [...result];
         }
