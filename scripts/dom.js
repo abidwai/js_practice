@@ -1,4 +1,3 @@
-
 /* ******************************* general ******************************* */
 
 // grab body node for faster access of DOM
@@ -23,7 +22,7 @@ if (result) {
     var addedNode = itemList.appendChild(newNode);
 
     // insert at firstlocation in node list
-    //itemList.prepend(newNode2);
+    // itemList.prepend(newNode2);
 
     // used to insert node in a specific location
     itemList.insertBefore(newNode2, itemList.firstElementChild);
