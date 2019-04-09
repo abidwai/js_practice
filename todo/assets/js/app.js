@@ -19,8 +19,28 @@ const today = new Date();
 
 dateEle.innerHTML = today.toLocaleDateString("en-us", options);
 
+// Get the items from localstorage
+let data = localStorage.getItem("TODO");
+
+// Check if data is not empty
+if (data) {
+    LIST = JSON.parse(data);
+    id = LIST.length;
+    loadToDoList(LIST);
+} else {
+    LIST = [];
+    id = 0;
+}
+
+// Laod items to the user's interface
+function loadToDoList(array) {
+    array.forEach(function(item) {
+        addToDo(item.name, item.id, item.done, item.trash);
+    });
+}
+
 // add todo
-let addToDo = function(todo, id, done, trash) {
+function addToDo(todo, id, done, trash) {
     if (trash) {
         return;
     }
@@ -49,8 +69,41 @@ document.addEventListener("keyup", function(event) {
                 done: false,
                 trash: false
             });
+            // add item to localstorage (this code must be added where the LIST array is updated)
+            localStorage.setItem("TODO", JSON.stringify(LIST));
             id++;
         }
         inputEle.value = "";
     }
+});
+
+// Complete todo
+
+let completeToDo = function(element) {
+    element.classList.toggle(CHECK);
+    element.classList.toggle(UNCHECK);
+    element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+
+    LIST[element.id].done = LIST[element.id].done ? false : true;
+}
+
+// Remove todo
+let removeToDO = function(element) {
+    element.parentNode.parentNode.removeChild(element.parentNode);
+
+    LIST[element.id].trash = true;
+}
+
+// Target items created dynamically
+listEle.addEventListener("click", function(event) {
+    const element = event.target; // return clicked element inside list
+    const elementJOB = element.attributes.job.value; // return complete or delete
+
+    if (elementJOB === "complete") {
+        completeToDo(element);
+    } else if (elementJOB === "delete") {
+        removeToDO(element);
+    }
+    // add item to localstorage (this code must be added where the LIST array is updated)
+    localStorage.setItem("TODO", JSON.stringify(LIST));
 });
