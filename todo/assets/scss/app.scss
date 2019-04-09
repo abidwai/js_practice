@@ -54,10 +54,20 @@ body {
             &:not(:last-child) {
                 border-bottom: 1px solid #dddddd;
             }
+            .fa-check-circle {
+                color: green;
+            }
             .text {
                 text-transform: uppercase;
+                color: #000000;
                 &.lineThrough {
                     text-decoration: line-through;
+                    color: rgba(0, 0, 0, 0.6);
+                }
+            }
+            i {
+                &:hover {
+                    cursor: pointer;
                 }
             }
         }

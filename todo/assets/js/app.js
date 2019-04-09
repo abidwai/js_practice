@@ -116,6 +116,8 @@ if (data) {
 
 // Clear todo list
 clearEle.addEventListener("click", function() {
-    localStorage.clear();
-    location.reload();
+    if (localStorage.hasOwnProperty('TODO')) {
+        localStorage.clear();
+        location.reload();
+    }
 });

@@ -45,10 +45,16 @@ body {
       padding: 10px; }
       .todo .list .item:not(:last-child) {
         border-bottom: 1px solid #dddddd; }
+      .todo .list .item .fa-check-circle {
+        color: green; }
       .todo .list .item .text {
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        color: #000000; }
         .todo .list .item .text.lineThrough {
-          text-decoration: line-through; }
+          text-decoration: line-through;
+          color: rgba(0, 0, 0, 0.6); }
+      .todo .list .item i:hover {
+        cursor: pointer; }
   .todo input[type="text"] {
     width: 100%;
     padding: 10px 6px;
