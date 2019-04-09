@@ -23,28 +23,15 @@ const today = new Date();
 
 dateEle.innerHTML = today.toLocaleDateString("en-us", options);
 
-// Get the items from localstorage
-let data = localStorage.getItem("TODO");
-
-// Check if data is not empty
-if (data) {
-    LIST = JSON.parse(data);
-    id = LIST.length;
-    loadToDoList(LIST);
-} else {
-    LIST = [];
-    id = 0;
-}
-
 // Laod items to the user's interface
-function loadToDoList(array) {
+let loadToDoList = function(array) {
     array.forEach(function(item) {
         addToDo(item.name, item.id, item.done, item.trash);
     });
 }
 
 // add todo
-function addToDo(todo, id, done, trash) {
+let addToDo = function(todo, id, done, trash) {
     if (trash) {
         return;
     }
@@ -113,6 +100,19 @@ listEle.addEventListener("click", function(event) {
     // add item to localstorage (this code must be added where the LIST array is updated)
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
+
+// Get the items from localstorage
+let data = localStorage.getItem("TODO");
+
+// Check if data is not empty
+if (data) {
+    LIST = JSON.parse(data);
+    id = LIST.length;
+    loadToDoList(LIST);
+} else {
+    LIST = [];
+    id = 0;
+}
 
 // Clear todo list
 clearEle.addEventListener("click", function() {
