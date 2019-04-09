@@ -14,7 +14,11 @@ const UNCHECK = "fa-circle";
 const LINE_THROUGH = "lineThrough";
 
 // Show todays date
-const options = { weekday: "long", month: "short", day: "numeric" }
+const options = {
+    weekday: "long",
+    month: "short",
+    day: "numeric"
+}
 const today = new Date();
 
 dateEle.innerHTML = today.toLocaleDateString("en-us", options);
@@ -48,9 +52,11 @@ function addToDo(todo, id, done, trash) {
     const LINE = done ? LINE_THROUGH : "";
     let item = `
             <li class="item">
-                <i class="fa ${DONE}" job="complete" id="${id}"></i>
-                <span class="text ${LINE}">${todo}</span>
-                <i class="fa fa-trash-alt" job="delete" id=${id}>trash</i>
+                <div>
+                    <i class="far ${DONE}" job="complete" id="${id}"></i>
+                    <span class="text ${LINE}">${todo}</span>
+                </div>
+                <i class="far fa-trash-alt" job="delete" id=${id}></i>
             </li>
             `;
     let position = "beforeend";
@@ -106,4 +112,10 @@ listEle.addEventListener("click", function(event) {
     }
     // add item to localstorage (this code must be added where the LIST array is updated)
     localStorage.setItem("TODO", JSON.stringify(LIST));
+});
+
+// Clear todo list
+clearEle.addEventListener("click", function() {
+    localStorage.clear();
+    location.reload();
 });
