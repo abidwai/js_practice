@@ -23,13 +23,6 @@ const today = new Date();
 
 dateEle.innerHTML = today.toLocaleDateString("en-us", options);
 
-// Laod items to the user's interface
-let loadToDoList = function(array) {
-    array.forEach(function(item) {
-        addToDo(item.name, item.id, item.done, item.trash);
-    });
-}
-
 // add todo
 let addToDo = function(todo, id, done, trash) {
     if (trash) {
@@ -103,6 +96,13 @@ listEle.addEventListener("click", function(event) {
 
 // Get the items from localstorage
 let data = localStorage.getItem("TODO");
+
+// Laod items to the user's interface
+let loadToDoList = function(array) {
+    array.forEach(function(item) {
+        addToDo(item.name, item.id, item.done, item.trash);
+    });
+}
 
 // Check if data is not empty
 if (data) {
