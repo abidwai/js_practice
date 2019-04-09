@@ -25,12 +25,12 @@ dateEle.innerHTML = today.toLocaleDateString("en-us", options);
 
 // add todo
 let addToDo = function(todo, id, done, trash) {
-    if (trash) {
-        return;
-    }
-    const DONE = done ? CHECK : UNCHECK;
-    const LINE = done ? LINE_THROUGH : "";
-    let item = `
+        if (trash) {
+            return;
+        }
+        const DONE = done ? CHECK : UNCHECK;
+        const LINE = done ? LINE_THROUGH : "";
+        let item = `
             <li class="item">
                 <div>
                     <i class="far ${DONE}" job="complete" id="${id}"></i>
@@ -39,11 +39,10 @@ let addToDo = function(todo, id, done, trash) {
                 <i class="far fa-trash-alt" job="delete" id=${id}></i>
             </li>
             `;
-    let position = "beforeend";
-    listEle.insertAdjacentHTML(position, item);
-}
-
-// on enter press add todo
+        let position = "beforeend";
+        listEle.insertAdjacentHTML(position, item);
+    }
+    // on enter press add todo
 document.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         const todo = inputEle.value;
