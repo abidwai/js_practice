@@ -68,8 +68,9 @@ let completeToDo = function(element) {
     element.classList.toggle(CHECK);
     element.classList.toggle(UNCHECK);
     element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
-
+    // console.log(`before: ${LIST[element.id].done}`);
     LIST[element.id].done = LIST[element.id].done ? false : true;
+    // console.log(`after: ${LIST[element.id].done}`);
 }
 
 // Remove todo
