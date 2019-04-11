@@ -13,6 +13,17 @@ const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle";
 const LINE_THROUGH = "lineThrough";
 
+// show today's date
+const options = {
+    weekday: "long",
+    month: "short",
+    day: "numeric"
+}
+
+let today = new Date();
+
+eleDate.innerHTML = today.toLocaleDateString("en-us", options);
+
 // add todo
 let addToDo = (todo, id, done, trash) => {
     if (trash) {
@@ -96,3 +107,12 @@ if (data) {
     LIST = [];
     id = 0;
 }
+
+// clear todo list
+eleClear.addEventListener("click", () => {
+    let storageEmpty = localStorage.hasOwnProperty("TODO");
+    if (storageEmpty) {
+        localStorage.clear();
+        location.reload();
+    }
+});
