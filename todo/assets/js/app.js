@@ -33,7 +33,7 @@ let addToDo = function(todo, id, done, trash) {
         let item = `
             <li class="item">
                 <div>
-                    <i class="far ${DONE}" job="complete" id="${id}"></i>
+                    <i class="far ${DONE}" job="complete" id=${id}></i>
                     <span class="text ${LINE}">${todo}</span>
                 </div>
                 <i class="far fa-trash-alt" job="delete" id=${id}></i>
@@ -63,7 +63,6 @@ document.addEventListener("keyup", function(event) {
 });
 
 // Complete todo
-
 let completeToDo = function(element) {
     element.classList.toggle(CHECK);
     element.classList.toggle(UNCHECK);
@@ -74,9 +73,8 @@ let completeToDo = function(element) {
 }
 
 // Remove todo
-let removeToDO = function(element) {
+let removeToDo = function(element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
-
     LIST[element.id].trash = true;
 }
 
@@ -88,7 +86,7 @@ listEle.addEventListener("click", function(event) {
     if (elementJOB === "complete") {
         completeToDo(element);
     } else if (elementJOB === "delete") {
-        removeToDO(element);
+        removeToDo(element);
     }
     // add item to localstorage (this code must be added where the LIST array is updated)
     localStorage.setItem("TODO", JSON.stringify(LIST));
