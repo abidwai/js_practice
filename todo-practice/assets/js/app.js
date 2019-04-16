@@ -110,8 +110,8 @@ if (data) {
 
 // clear todo list
 eleClear.addEventListener("click", () => {
-    let storageEmpty = localStorage.hasOwnProperty("TODO");
-    if (storageEmpty) {
+    let checkStorage = localStorage.hasOwnProperty("TODO");
+    if (checkStorage) {
         localStorage.clear();
         location.reload();
     }
