@@ -87,14 +87,14 @@ listEle.addEventListener("click", (event) => {
     localStorage.setItem("todo", JSON.stringify(LIST));
 });
 
-// load todo list from localstorage
+// what it does: load todo list from localstorage
 let loadToDoList = (array) => {
     array.forEach((item) => {
         addToDo(item.name, item.id, item.done, item.trash);
     });
 };
 
-// check localStorage empty or not
+// what it does: check localStorage empty or not
 let data = localStorage.getItem("todo");
 if (data) {
     LIST = JSON.parse(data);
@@ -104,3 +104,12 @@ if (data) {
     LIST = [];
     id = 0;
 }
+
+// what it does: clear the local storage and reload the page
+clearEle.addEventListener("click", () => {
+    let hasProp = localStorage.hasOwnProperty("todo");
+    if (hasProp) {
+        localStorage.clear();
+        location.reload();
+    }
+});
