@@ -13,14 +13,28 @@ const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle";
 const LINE_THROUGH = "lineThrough"
 
+
+// set date
+const options = {
+    weekday: 'long',
+    month: 'short',
+    day: 'numeric'
+}
+const date = new Date();
+dateEle.innerHTML = date.toLocaleDateString("en-us", options);
+
 // what it does: add todo
 let addToDo = (todo, id, done, trash) => {
+    if (trash) {
+        return;
+    }
     const DONE = done ? CHECK : UNCHECK;
+    const LINE = done ? LINE_THROUGH : "";
     const item = `
     <li class="item">
         <div>
             <i class="far ${DONE}" job="complete" id=${id}></i>
-            <span class="text">${todo}</span>
+            <span class="text ${LINE}">${todo}</span>
         </div>
         <i class="far fa-trash-alt" job="delete" id=${id}></i>
     </li>`;
@@ -79,9 +93,14 @@ let loadToDoList = (array) => {
         addToDo(item.name, item.id, item.done, item.trash);
     });
 };
-// 
+
+// check localStorage empty or not
 let data = localStorage.getItem("todo");
 if (data) {
     LIST = JSON.parse(data);
     loadToDoList(LIST);
+    id = LIST.length;
+} else {
+    LIST = [];
+    id = 0;
 }
