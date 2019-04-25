@@ -75,7 +75,7 @@ let removeToDo = (element) => {
     LIST[element.id].trash = true;
 }
 
-// what it does: add event to dynamiclayy added item
+// what it does: add event to dynamiclay added item
 listEle.addEventListener("click", (event) => {
     const element = event.target;
     const elementJOB = element.attributes.job.value;
