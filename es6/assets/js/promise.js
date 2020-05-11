@@ -1,7 +1,7 @@
 // Morning promise
 let morning = function () {
     return new Promise(function (resolve, reject) {
-        if (false) {
+        if (true) {
             resolve(`morning resolve,`);
         } else {
             reject(`morning reject,`);
