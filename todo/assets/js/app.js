@@ -24,13 +24,13 @@ const today = new Date();
 dateEle.innerHTML = today.toLocaleDateString("en-us", options);
 
 // add todo
-let addToDo = function(todo, id, done, trash) {
-        if (trash) {
-            return;
-        }
-        const DONE = done ? CHECK : UNCHECK;
-        const LINE = done ? LINE_THROUGH : "";
-        let item = `
+let addToDo = function (todo, id, done, trash) {
+    if (trash) {
+        return;
+    }
+    const DONE = done ? CHECK : UNCHECK;
+    const LINE = done ? LINE_THROUGH : "";
+    let item = `
             <li class="item">
                 <div>
                     <i class="far ${DONE}" job="complete" id=${id}></i>
@@ -39,11 +39,11 @@ let addToDo = function(todo, id, done, trash) {
                 <i class="far fa-trash-alt" job="delete" id=${id}></i>
             </li>
             `;
-        let position = "beforeend";
-        listEle.insertAdjacentHTML(position, item);
-    }
-    // on enter press add todo
-document.addEventListener("keyup", function(event) {
+    let position = "beforeend";
+    listEle.insertAdjacentHTML(position, item);
+}
+// on enter press add todo
+document.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
         const todo = inputEle.value;
         if (todo) {
@@ -63,7 +63,7 @@ document.addEventListener("keyup", function(event) {
 });
 
 // Complete todo
-let completeToDo = function(element) {
+let completeToDo = function (element) {
     element.classList.toggle(CHECK);
     element.classList.toggle(UNCHECK);
     element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
@@ -73,13 +73,13 @@ let completeToDo = function(element) {
 }
 
 // Remove todo
-let removeToDo = function(element) {
+let removeToDo = function (element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
     LIST[element.id].trash = true;
 }
 
 // Target items created dynamically
-listEle.addEventListener("click", function(event) {
+listEle.addEventListener("click", function (event) {
     const element = event.target; // return clicked element inside list
     const elementJOB = element.attributes.job.value; // return complete or delete
 
@@ -96,8 +96,8 @@ listEle.addEventListener("click", function(event) {
 let data = localStorage.getItem("TODO");
 
 // Laod items to the user's interface
-let loadToDoList = function(array) {
-    array.forEach(function(item) {
+let loadToDoList = function (array) {
+    array.forEach(function (item) {
         addToDo(item.name, item.id, item.done, item.trash);
     });
 }
@@ -113,7 +113,7 @@ if (data) {
 }
 
 // Clear todo list
-clearEle.addEventListener("click", function() {
+clearEle.addEventListener("click", function () {
     if (localStorage.hasOwnProperty('TODO')) {
         localStorage.clear();
         location.reload();
