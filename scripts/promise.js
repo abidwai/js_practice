@@ -34,7 +34,7 @@ const createPost = (post) => {
 createPost({ id: 3, 'title': 'third post', 'body': 'third post' })
     .then(getPosts)
     .catch(err => console.log(err)); */
-
+var xyz;
 const status = (response) => {
     if (response.status >= 200 && response.status < 300) {
         return Promise.resolve(response);
@@ -47,8 +47,12 @@ const json = (response) => {
     return response.json();
 }
 
+let result = '';
+
 const data = (data) => {
-    console.table(data[0]);
+    //console.table(data);
+    data.forEach(d => result += `<li>${d.name} ${d.email}</li>`);
+    document.body.innerHTML = result;
 }
 
 fetch('https://jsonplaceholder.typicode.com/users/')
