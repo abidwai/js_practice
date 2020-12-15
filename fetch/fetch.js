@@ -4,6 +4,14 @@ const output = document.getElementById('output');
 
 const POSTS_API_URL = 'https://jsonplaceholder.typicode.com/posts';
 
+const getPosts = () => {
+    fetch(POSTS_API_URL)
+        .then(status)
+        .then(json)
+        .then(data)
+        .catch(err => console.log(err))
+}
+
 const status = (response) => {
     if (response.status >= 200 && response.status < 300) {
         return Promise.resolve(response);
@@ -19,35 +27,15 @@ const json = (response) => {
 const data = (posts) => {
     let result = `<h2>Posts</h2>`;
     posts.forEach((post) => {
-        result += `<ul>
+        result += `<ul class="post">
                <li>ID: ${post.id}</li>
                <li>Title: ${post.title}</li>
                <li>Body: ${post.body}</li>
            </ul>`;
     });
-
-    /** print upto first 10 records */
-    /*  for (let i = 0; i < posts.length; i++) {
-         if (posts[i].id === 11) {
-             break;
-         }
-         result += `<ul>
-             <li>ID: ${posts[i].id}</li>
-             <li>Title: ${posts[i].title}</li>
-             <li>Body: ${posts[i].body}</li>
-         </ul>`;
-     } */
-
     output.innerHTML = result;
 }
 
-const getPosts = () => {
-    fetch(POSTS_API_URL)
-        .then(status)
-        .then(json)
-        .then(data)
-        .catch(err => console.log(err))
-}
 
 /** send post */
 const sendPost = (e) => {
@@ -76,3 +64,12 @@ const sendPost = (e) => {
 
 btnGetPosts.addEventListener('click', getPosts, false);
 formSendPost.addEventListener('submit', sendPost, false);
+
+/* remove post */
+const removePost = (e) => {
+    const element = e.target;
+    if (element.parentNode.classList.contains('post')) {
+        element.parentNode.remove();
+    }
+}
+output.addEventListener('click', removePost, false)
