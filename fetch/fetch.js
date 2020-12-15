@@ -4,14 +4,6 @@ const output = document.getElementById('output');
 
 const POSTS_API_URL = 'https://jsonplaceholder.typicode.com/posts';
 
-const getPosts = () => {
-    fetch(POSTS_API_URL)
-        .then(status)
-        .then(json)
-        .then(data)
-        .catch(err => console.log(err))
-}
-
 const status = (response) => {
     if (response.status >= 200 && response.status < 300) {
         return Promise.resolve(response);
@@ -36,6 +28,13 @@ const data = (posts) => {
     output.innerHTML = result;
 }
 
+const getPosts = () => {
+    fetch(POSTS_API_URL)
+        .then(status)
+        .then(json)
+        .then(data)
+        .catch(err => console.log(err))
+}
 
 /** send post */
 const sendPost = (e) => {
