@@ -1,6 +1,6 @@
 const btnGetPosts = document.getElementById('getPosts');
 const formSendPost = document.getElementById('sendPost');
-const result = document.getElementById('output');
+const output = document.getElementById('output');
 
 const POSTS_API_URL = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -16,28 +16,29 @@ const json = (response) => {
     return response.json();
 }
 
-const data = (data) => {
-    let output = `<h2>Posts</h2>`;
-    data.forEach((post) => {
-        output += `<ul>
-            <li>ID: ${post.id}</li>
-            <li>Title: ${post.title}</li>
-            <li>Body: ${post.body}</li>
-        </ul>`;
+const data = (posts) => {
+    let result = `<h2>Posts</h2>`;
+    posts.forEach((post) => {
+        result += `<ul>
+               <li>ID: ${post.id}</li>
+               <li>Title: ${post.title}</li>
+               <li>Body: ${post.body}</li>
+           </ul>`;
     });
-    result.innerHTML = output;
 
     /** print upto first 10 records */
-    /* for (let i = 0; i < data.length; i++) {
-        if (data[i].id === 11) {
-            break;
-        }
-        output += `<ul>
-            <li>ID: ${data[i].id}</li>
-            <li>Title: ${data[i].title}</li>
-            <li>Body: ${data[i].body}</li>
-        </ul>`;
-    } */
+    /*  for (let i = 0; i < posts.length; i++) {
+         if (posts[i].id === 11) {
+             break;
+         }
+         result += `<ul>
+             <li>ID: ${posts[i].id}</li>
+             <li>Title: ${posts[i].title}</li>
+             <li>Body: ${posts[i].body}</li>
+         </ul>`;
+     } */
+
+    output.innerHTML = result;
 }
 
 const getPosts = () => {
