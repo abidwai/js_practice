@@ -11,7 +11,8 @@ const posts = [
     }
 ];
 
-const getPosts = () => {
+const getPosts = (msg) => {
+    console.log(msg)
     let output = '';
     posts.forEach(post => {
         output += `<li>${post.title}</li>`;
@@ -24,7 +25,7 @@ const createPost = (post) => {
         posts.push(post);
         const error = false;
         if (!error) {
-            resolve();
+            resolve("settled message");
         } else {
             reject('something went wrong!')
         }
@@ -32,7 +33,7 @@ const createPost = (post) => {
 }
 
 createPost({ id: 3, 'title': 'third post', 'body': 'third post' })
-    .then(getPosts)
+    .then((msg) => getPosts(msg))
     .catch(err => console.log(err));
 
 

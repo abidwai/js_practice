@@ -1,8 +1,12 @@
-const btnGetPosts = document.getElementById('getPosts');
-const formSendPost = document.getElementById('sendPost');
+/** HTML elements */
+const btnGetAllPosts = document.getElementById('btnGetAllPosts');
+const btnGetSinglePost = document.getElementById("btnGetSinglePost");
+const formSendPost = document.getElementById('formSendPost');
 const output = document.getElementById('output');
+const inputPostId = document.getElementById("inputPostId");
 
-const POSTS_API_URL = 'https://jsonplaceholder.typicode.com/posts';
+/** API URL */
+const ENDPOINT = 'https://jsonplaceholder.typicode.com/posts';
 
 const status = (response) => {
     if (response.status >= 200 && response.status < 300) {
@@ -13,6 +17,8 @@ const status = (response) => {
 }
 
 const json = (response) => {
+    //console.log('response.json', response.json());
+    // return promise with result
     return response.json();
 }
 
@@ -20,20 +26,39 @@ const data = (posts) => {
     let result = `<h2>Posts</h2>`;
     posts.forEach((post) => {
         result += `<ul class="post">
-               <li>ID: ${post.id}</li>
-               <li>Title: ${post.title}</li>
-               <li>Body: ${post.body}</li>
-           </ul>`;
+                <li>ID: ${post.id}</li>
+                <li>Title: ${post.title}</li>
+                <li>Body: ${post.body}</li>
+            </ul>`;
     });
     output.innerHTML = result;
 }
 
-const getPosts = () => {
-    fetch(POSTS_API_URL)
+const getAllPosts = () => {
+    fetch(ENDPOINT)
         .then(status)
         .then(json)
         .then(data)
-        .catch(err => console.log(err))
+        .catch(err => console.log(err.message))
+}
+
+/** get the desired post */
+const getAPost = () => {
+    const id = inputPostId.value;
+    fetch(`${ENDPOINT}/${id}`)
+        .then(status)
+        .then(json)
+        .then(post => {
+            let result = `
+             <ul class="post">
+                <li>${post.id}</li>
+                <li>${post.title}</li>
+                <li>${post.body}</li>
+             </ul>
+            `;
+
+            output.innerHTML = result;
+        }, err => console.log(err))
 }
 
 /** send post */
@@ -48,7 +73,7 @@ const sendPost = (e) => {
         body: body
     }
 
-    fetch(POSTS_API_URL, {
+    fetch(ENDPOINT, {
         method: 'POST', // required
         headers: {
             'Accept': 'application/json, text/plain, */*', // required
@@ -61,14 +86,16 @@ const sendPost = (e) => {
         .then(data => console.log(data))
 }
 
-btnGetPosts.addEventListener('click', getPosts, false);
-formSendPost.addEventListener('submit', sendPost, false);
-
-/* remove post */
+/** remove post */
 const removePost = (e) => {
     const element = e.target;
     if (element.parentNode.classList.contains('post')) {
         element.parentNode.remove();
     }
 }
+
+/** event registrations */
+btnGetAllPosts.addEventListener('click', getAllPosts, false);
+btnGetSinglePost.addEventListener("click", getAPost, false);
+formSendPost.addEventListener('submit', sendPost, false);
 output.addEventListener('click', removePost, false)

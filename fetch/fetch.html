@@ -9,14 +9,25 @@
 
 <body>
 
-    <button type="button" id="getPosts">Get posts</button>
-    <form action="" id="sendPost">
-        <input type="text" placeholder="Title" id="title" />
-        <div>
-            <textarea cols="30" rows="4" placeholder="Body" id="body"></textarea>
-        </div>
-        <button type="submit">Send</button>
-    </form>
+    <fieldset>
+        <legend>Get all post</legend>
+        <button type="button" id="btnGetAllPosts">Get all posts</button>
+    </fieldset>
+    <fieldset>
+        <legend>Get desired post</legend>
+        <input type="tel" placeholder="Please type a post id" id="inputPostId" />
+        <button id="btnGetSinglePost">Get a post</button>
+    </fieldset>
+    <fieldset>
+        <legend>Send post</legend>
+        <form action="" id="formSendPost">
+            <input type="text" placeholder="Title" id="title" />
+            <div>
+                <textarea cols="30" rows="4" placeholder="Body" id="body"></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </fieldset>
     <div id="output"></div>
     <script src="fetch.js"></script>
 </body>
