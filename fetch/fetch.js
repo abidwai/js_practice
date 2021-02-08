@@ -73,14 +73,16 @@ const sendPost = (e) => {
         body: body
     }
 
-    fetch(ENDPOINT, {
-        method: 'POST', // required
+    const params = {
+        method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*', // required
             'content-type': 'application/json' // required
         },
         body: JSON.stringify(post) // required
-    })
+    }
+
+    fetch(ENDPOINT, params)
         .then(status)
         .then(json)
         .then(data => console.log(data))
