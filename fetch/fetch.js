@@ -41,7 +41,7 @@ const getAllPosts = () => {
         .then(status)
         .then(json)
         .then(data)
-        .catch(err => console.log(err.message))
+        .catch(err => output.innerHTML = err.message)
 }
 
 /** get the desired post */
@@ -60,7 +60,7 @@ const getAPost = () => {
             `;
 
             output.innerHTML = result;
-        }, err => console.log(err))
+        }, err => output.innerHTML = err)
 }
 
 /** send post */
