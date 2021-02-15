@@ -47,6 +47,7 @@ const getAllPosts = () => {
 /** get the desired post */
 const getAPost = () => {
     const id = inputPostId.value;
+    if (!id) return;
     fetch(`${ENDPOINT}/${id}`)
         .then(status)
         .then(json)
@@ -60,7 +61,8 @@ const getAPost = () => {
             `;
 
             output.innerHTML = result;
-        }, err => output.innerHTML = err)
+        })
+        .catch(err => output.innerHTML = err)
 }
 
 /** send post */
