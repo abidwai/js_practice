@@ -34,6 +34,8 @@ const data = (posts) => {
     output.innerHTML = result;
 }
 
+
+/** get the all post */
 const getAllPosts = () => {
     fetch(ENDPOINT)
         .then(status)
